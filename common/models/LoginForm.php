@@ -12,6 +12,7 @@ class LoginForm extends Model
     public $username;
     public $password;
     public $rememberMe = true;
+    public $email;
 
     private $_user;
 
@@ -23,12 +24,31 @@ class LoginForm extends Model
     {
         return [
             // username and password are both required
-            [['username', 'password'], 'required'],
+            [['email', 'password'], 'required'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
+            // email is validated by validateEmail()
+            ['email', 'validateEmail'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
         ];
+    }
+
+    /**
+     * Validates the email.
+     * This method serves as the inline validation for email.
+     *
+     * @param string $attribute the attribute currently being validated
+     * @param array $params the additional name-value pairs given in the rule
+     */
+    public function validateEmail($attribute, $params)
+    {
+        if (!$this->hasErrors()) {
+            $user =  $this->getUser();
+            if ($user === null) {
+                $this->addError($attribute, 'Incorrect email');
+            }
+        }
     }
 
     /**
@@ -70,7 +90,8 @@ class LoginForm extends Model
     protected function getUser()
     {
         if ($this->_user === null) {
-            $this->_user = User::findByUsername($this->username);
+            //$this->_user = User::findByUsername($this->username);
+            $this->_user = User::findByEmail($this->email);
         }
 
         return $this->_user;
