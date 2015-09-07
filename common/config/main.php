@@ -23,6 +23,9 @@ return [
             // for the mailer to send real emails.
             'useFileTransport' => true,
         ],
+        'rightManager' => [
+            'class' => 'common\components\DBRights',
+        ],
 
     ],
 ];
