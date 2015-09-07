@@ -21,7 +21,8 @@ $this->params['bodyClass'] = 'hybrizy-purple-bg';
         <p>A tiny code that promises awesome feedback from your customers and audiences.
             An innovating approach for creating attention-grabbing contents.
         </p>
-        <p>Try it now or sign-up to see it in action.</p>
+        <p id="forgotText">Try it now or sign-up to see it in action.</p>
+        <div id="formLoginOB">
         <?php
         $form = ActiveForm::begin([
             'id'          => 'form-login',
@@ -46,6 +47,7 @@ $this->params['bodyClass'] = 'hybrizy-purple-bg';
                 color: #18a689;
                 font-weight: bold;
             }
+
         </style>
 
         <?= $form->field($model, 'email',['inputOptions'=>['placeholder'=>'Enter Email','class'=>'form-control black-font'],'errorOptions'=>['class'=>'hybrizy-error-blue']]) ?>
@@ -54,7 +56,9 @@ $this->params['bodyClass'] = 'hybrizy-purple-bg';
         <div class="form-group">
             <?= Html::submitButton('Sign-In', ['class' => 'btn btn-warning block full-width m-b', 'name' => 'signup-button']) ?>
         </div>
-        <a href="#" class="hybrizy-error-blue"><small>Forgot password?</small></a>
+        </div>
+
+        <a id="formsControlz" onclick="getForgotPasswordForm()" href="<?php echo Url::to(['site/request-password-reset']); ?>" class="hybrizy-error-blue"><small>Forgot password?</small></a>
         <p class="text-muted text-center" style="color: #fff"><small>Do not have an account?</small></p>
         <a class="btn btn-sm btn-primary btn-block" href="<?=Url::to(['site/signup'])?>">Create an account</a>
         <?php ActiveForm::end(); ?>
@@ -62,3 +66,4 @@ $this->params['bodyClass'] = 'hybrizy-purple-bg';
         <p class="m-t"> <small>Hybrizy &copy; 2014 Apt Inventions Sdn. Bhd.</small> </p>
     </div>
 </div>
+ 
