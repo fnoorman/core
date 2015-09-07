@@ -49,7 +49,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                         <a href="#about">About v3</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#services">Services</a>
+                        <a href="#services">Services Wan</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#news">News</a>
