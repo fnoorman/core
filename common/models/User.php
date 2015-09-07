@@ -51,8 +51,8 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            ['status', 'default', 'value' => self::STATUS_ACTIVE],
-            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+            ['status', 'default', 'value' => self::STATUS_PENDING_VERIFICATION],
+            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_PENDING_VERIFICATION, self::STATUS_DELETED]],
         ];
     }
 
@@ -78,9 +78,9 @@ class User extends ActiveRecord implements IdentityInterface
      * @param string $email
      * @return static|null
      */
-    public static function findByEmail($email)
+    public static function findByEmail($email,$status = self::STATUS_ACTIVE)
     {
-        return static::findOne(['email' => $email, 'status' => self::STATUS_ACTIVE]);
+        return static::findOne(['email' => $email, 'status' => $status]);
     }
 
     /**
@@ -135,6 +135,14 @@ class User extends ActiveRecord implements IdentityInterface
     public function getId()
     {
         return $this->getPrimaryKey();
+    }
+    
+        /**
+     * @inheritdoc
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 
     /**

@@ -18,8 +18,14 @@ $this->params['bodyClass'] = 'hybrizy-purple-bg';
             <h1 class="logo-name">HY+</h1>
         </div>
         <h3>Welcome to Hybrizy</h3>
-
-        <p id="forgotText">Please choose your new password:</p>
+        <?php
+        $resetLink = Yii::$app->urlManager->createAbsoluteUrl(['site/reset-password', 'token' => 'adf gyr3fer435rgeg']);
+        echo "===> ".$resetLink;
+        ?>
+        <p>A tiny code that promises awesome feedback from your customers and audiences.
+            An innovating approach for creating attention-grabbing contents.
+        </p>
+        <p id="forgotText">Please fill out your email. A link to reset password will be sent there.</p>
  
         <style>
             .black-font {
@@ -40,11 +46,9 @@ $this->params['bodyClass'] = 'hybrizy-purple-bg';
  
     
         <div id="formForgotOB">
-       
-            
         <?php
         $form = ActiveForm::begin([
-            'id'          => 'reset-password-form',
+            'id'          => 'request-password-reset-form',
             'fieldConfig' => [
                 'template'  => "{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}"
             ],
@@ -53,14 +57,15 @@ $this->params['bodyClass'] = 'hybrizy-purple-bg';
         ]);
         ?>
 
-        <?= $form->field($model, 'password',['inputOptions'=>['class'=>'form-control black-font']])->passwordInput() ?>
+        <?= $form->field($model, 'email',['inputOptions'=>['placeholder'=>'Enter Email','class'=>'form-control black-font'],'errorOptions'=>['class'=>'hybrizy-error-blue']]) ?>
 
         <div class="form-group">
-            <?= Html::submitButton('Save', ['class' => 'btn btn-warning block full-width m-b', 'name' => 'reset-button']) ?>
+            <?= Html::submitButton('Submit', ['class' => 'btn btn-warning block full-width m-b', 'name' => 'forgot-button']) ?>
         </div>
         </div>
- 
- 
+        <a id="formsControlzBack" onclick="getLoginForm()" href="<?php echo Url::to(['site/login']); ?>" class="hybrizy-error-blue"><small>Back to login</small></a>
+        <p class="text-muted text-center" style="color: #fff"><small>Do not have an account?</small></p>
+        <a class="btn btn-sm btn-primary btn-block" href="<?=Url::to(['site/signup'])?>">Create an account</a>
         <?php ActiveForm::end(); ?>
 
         <p class="m-t"> <small>Hybrizy &copy; 2014 Apt Inventions Sdn. Bhd.</small> </p>
