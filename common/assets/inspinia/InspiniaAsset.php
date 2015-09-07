@@ -20,6 +20,7 @@ class InspiniaAsset extends AssetBundle
     public $css = [
         'css/bootstrap.min.css',
         'font-awesome/css/font-awesome.css',
+        'css/plugins/chosen/chosen.css',
         'css/animate.css',
         'css/style.css'
     ];
