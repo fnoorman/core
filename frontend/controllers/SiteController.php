@@ -225,11 +225,11 @@ class SiteController extends Controller
                 ));
                 
                 $sendMail = \Yii::$app->mailer->compose()
-    		->setFrom([\Yii::$app->params['supportEmail'] => $hybrizyAdmin])
-   	        ->setTo($to)
-   		->setSubject($subject)
-   		->setHtmlBody($message)
-   		->send(); 
+                ->setFrom([\Yii::$app->params['supportEmail'] => $hybrizyAdmin])
+                ->setTo($to)
+                ->setSubject($subject)
+                ->setHtmlBody($message)
+                ->send();
 
                 if($sendMail)
                     //return $this->actionIndex('Sila Rujuk email!');
@@ -260,8 +260,6 @@ class SiteController extends Controller
         //$model = new User();
         $key = Yii::$app->request->get('key');
         $email = Yii::$app->request->get('email');
- 
- 
 
         $model = User::findByEmail($email, User::STATUS_PENDING_VERIFICATION);
 

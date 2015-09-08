@@ -31,7 +31,7 @@ InspiniaAsset::register($this);
     <?php $this->head() ?>
 </head>
 <?php
-$options = ['class'=>''];
+$options = ['class'=>'skin-1'];
 if(isset($this->params['bodyClass'])){
     Html::addCssClass($options,$this->params['bodyClass']);
 }
