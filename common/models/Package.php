@@ -3,6 +3,9 @@
 namespace common\models;
 
 use Yii;
+use common\models\Lookup;
+use yii\helpers\ArrayHelper;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%package}}".
@@ -20,6 +23,8 @@ use Yii;
  * @property integer $update_at
  * @property integer $create_by
  * @property integer $created_at
+ *
+ * @property Offer[] $offers
  */
 class Package extends \yii\db\ActiveRecord
 {
@@ -34,10 +39,21 @@ class Package extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function rules()
     {
         return [
-            [['maxCallOut', 'maxAllowedCode', 'update_at', 'created_at'], 'required'],
+            [['maxCallOut', 'maxAllowedCode'], 'required'],
             [['maxCallOut', 'maxAllowedCode', 'enable', 'minBalance', 'update_by', 'update_at', 'create_by', 'created_at'], 'integer'],
             [['name'], 'string', 'max' => 80],
             [['code'], 'string', 'max' => 19],
@@ -54,18 +70,26 @@ class Package extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
-            'maxCallOut' => Yii::t('app', 'maximum of callouts allowed'),
-            'maxAllowedCode' => Yii::t('app', 'number of given code'),
-            'enable' => Yii::t('app', 'Status of the package'),
-            'code' => Yii::t('app', 'package code'),
+            'maxCallOut' => Yii::t('app', 'Max. Callouts'),
+            'maxAllowedCode' => Yii::t('app', 'Max. No. Code'),
+            'enable' => Yii::t('app', 'Status'),
+            'code' => Yii::t('app', 'Package code'),
             'videoMaxSize' => Yii::t('app', 'Video Max Size'),
             'pictureMaxSize' => Yii::t('app', 'Picture Max Size'),
-            'minBalance' => Yii::t('app', 'Minimum balamce on callouts'),
+            'minBalance' => Yii::t('app', 'Balance Callouts'),
             'update_by' => Yii::t('app', 'Update By'),
             'update_at' => Yii::t('app', 'Update At'),
             'create_by' => Yii::t('app', 'Create By'),
             'created_at' => Yii::t('app', 'Created At'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getOffers()
+    {
+        return $this->hasMany(Offer::className(), ['package_id' => 'id']);
     }
 
     /**
@@ -75,5 +99,12 @@ class Package extends \yii\db\ActiveRecord
     public static function find()
     {
         return new PackageQuery(get_called_class());
+    }
+
+    public function StatusDropDownOptions()
+    {
+        $statusLookup = Lookup::items('Status-Package');
+        return $statusLookup;
+        //return ArrayHelper::map($statusLookup,'code','name');
     }
 }
