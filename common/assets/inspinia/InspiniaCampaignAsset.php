@@ -23,9 +23,8 @@ class InspiniaCampaignAsset extends AssetBundle
     ];
     public $js = [
         'js/inspinia.js',
-        'js/plugins/pace/pace.min.js',
+//        'js/plugins/pace/pace.min.js',
         'js/plugins/summernote/summernote.min.js',
-        'js/plugins/campaignScript/campaignEngine.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

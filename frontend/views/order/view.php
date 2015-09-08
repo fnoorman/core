@@ -10,7 +10,7 @@ $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Orders', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="order-view">
+
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -38,4 +38,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
-</div>
+
+
+

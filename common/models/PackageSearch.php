@@ -18,7 +18,7 @@ class PackageSearch extends Package
     public function rules()
     {
         return [
-            [['id', 'maxCallOut', 'maxAllowedCode', 'enable', 'minBalance', 'update_by', 'update_at', 'create_by', 'created_at'], 'integer'],
+            [['id', 'maxCallOut', 'maxAllowedCode', 'enable', 'minBalance', 'update_by', 'updated_at', 'create_by', 'created_at'], 'integer'],
             [['name', 'code', 'videoMaxSize', 'pictureMaxSize'], 'safe'],
         ];
     }
@@ -62,7 +62,7 @@ class PackageSearch extends Package
             'enable' => $this->enable,
             'minBalance' => $this->minBalance,
             'update_by' => $this->update_by,
-            'update_at' => $this->update_at,
+            'updated_at' => $this->updated_at,
             'create_by' => $this->create_by,
             'created_at' => $this->created_at,
         ]);

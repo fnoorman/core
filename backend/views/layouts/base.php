@@ -15,7 +15,7 @@ use common\widgets\Alert;
 use yii\widgets\Breadcrumbs;
 use common\assets\inspinia\InspiniaAsset;
 
-InspiniaAsset::register($this);
+$custom = InspiniaAsset::register($this);
 
 ?>
 <?php $this->beginPage() ?>
@@ -27,6 +27,10 @@ InspiniaAsset::register($this);
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
+
+        <link href="<?=$custom->baseUrl?>/css/animate.css" rel="stylesheet">
+        <link href="<?=$custom->baseUrl?>/css/style.css" rel="stylesheet">
+
     </head>
     <?php
         $options = ['class'=>'skin-1'];
@@ -38,10 +42,10 @@ InspiniaAsset::register($this);
     <?php $this->beginBody() ?>
         <?=$content?>
     <?php $this->endBody() ?>
-    </body>
 
     <?php if(isset($this->blocks['JavascriptInit'])):?>
         <?=$this->blocks['JavascriptInit']?>
     <?php endif;?>
+    </body>
     </html>
 <?php $this->endPage() ?>
