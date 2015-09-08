@@ -95,9 +95,10 @@ class SiteController extends Controller
      */
     public function actionCampaign()
     {
+
     	if (!\Yii::$app->user->isGuest) {
         	$this->layout = "columns-2";
-        	return $this->render('campaign');
+        	return $this->render('campaign',['title'=> 'Campaign']);
         }else {
             return $this->actionLogin();
         }
@@ -116,17 +117,11 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-<<<<<<< HEAD
+ 
             //return $this->actionIndex();
             	$this->layout = "columns-2";
         	return $this->render('index', ['model' => $model,]);
-=======
-            //return $this->goBack();
-            	$this->layout = "columns-2";
-        	return $this->render('index', [
-                'model' => $model,
-            ]);
->>>>>>> origin/v3
+ 
         } else {
             $this->layout='inspinia/base';
             return $this->render('hybrizy-login', [

@@ -83,8 +83,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
 <div> <center><?=$referEmail; ?></center></div>
 <?php }?>
 
-<div> <center><?=$referEmail?></center></div>
-
+ 
 <!-- Intro Section -->
 <section id="intro" class="intro-section">
     <div class="fullscreenbanner-container">
