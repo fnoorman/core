@@ -33,6 +33,9 @@ $baseBundle = UnifyThemeAsset::register($this);
         <link rel="stylesheet" href="<?=$baseBundle->baseUrl?>/css/theme-colors/blue.css" id="style_color">
         <!-- <link rel="stylesheet" href="<?=$baseBundle->baseUrl?>/css/theme-skins/one.dark.css"> -->
 
+        <!-- Pricing table css -->
+        <link rel="stylesheet" href="css/pages/page_pricing.css">
+
         <!-- CSS Customization -->
         <link rel="stylesheet" href="<?=$baseBundle->baseUrl?>/css/custom.css">
     </head>

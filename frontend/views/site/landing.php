@@ -330,6 +330,150 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
 </section>
 <!--  About Section -->
 
+<!-- Services Section -->
+<section id="services">
+    <div class="container content-lg">
+        <div class="title-v1">
+            <h2>Hybrizy Packages &amp; Pricing</h2>
+            <p>You can choose the packages that suit your needs.<br>
+            Each package contain different features.</p>
+        </div>
+        <!-- <div class="container content"> -->
+        <!-- Pricing Dark -->
+        <div class="row margin-bottom-20 pricing-dark">
+            <div class="col-md-3 col-sm-6">
+                <div class="pricing hover-effect">
+                    <div class="pricing-head">
+                        <h3>Begginer</h3>
+                    </div>
+                    <ul class="pricing-content list-unstyled" style="background-color:#17607f;">
+                        <li>
+                            <ul class="list-unstyled list-inline rating">
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star-half-empty fa-2x"></i></li>
+                                <li><i class="fa fa-star-o fa-2x"></i></li>
+                                <li><i class="fa fa-star-o fa-2x"></i></li>
+                                <li><i class="fa fa-star-o fa-2x"></i></li>
+                            </ul>
+                        </li>
+                        <li><i class="fa fa-gift"></i> Free customisation <span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-inbox"></i> 24 hour support<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-globe"></i> 10 GB Disckspace</li>
+                        <li><i class="fa fa-cloud-upload"></i> Cloud Storage</li>
+                        <li><i class="fa fa-umbrella"></i> Online Protection</li>
+                    </ul>
+                    <div class="pricing-footer" style="background-color:#17607f;">
+                        <h4><i>$</i>5<i>.49</i> <span>Per Month</span></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cloud Storage magna psum condimentum...</p>
+                        <a href="#" class="btn-u btn-brd btn-u-default btn-u-xs"><i class="fa fa-shopping-cart"></i> Purchase Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="pricing hover-effect pricing-square-border">
+                    <div class="pricing-head">
+                        <h3>Pro</h3>
+                    </div>
+                    <ul class="pricing-content list-unstyled" style="background-color:#2ec1ff;">
+                        <li>
+                            <ul class="list-unstyled list-inline rating">
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star-half-empty fa-2x"></i></li>
+                                <li><i class="fa fa-star-o fa-2x"></i></li>
+                                <li><i class="fa fa-star-o fa-2x"></i></li>
+                            </ul>
+                        </li>
+                        <li><i class="fa fa-gift"></i> Free customisation<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-inbox"></i> 24 hour support<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-globe"></i> 10 GB Disckspace<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-cloud-upload"></i> Cloud Storage</li>
+                        <li><i class="fa fa-umbrella"></i> Online Protection</li>
+                    </ul>
+                    <div class="pricing-footer" style="background-color:#2ec1ff;">
+                        <h4><i>$</i>8<i>.69</i> <span>Per Month</span></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cloud Storage magna psum condimentum...</p>
+                        <a href="#" class="btn-u btn-brd btn-u-default btn-u-xs"><i class="fa fa-shopping-cart"></i> Purchase Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="pricing hover-effect pricing-square-border">
+                    <div class="pricing-head">
+                        <h3>Premium</h3>
+                    </div>
+                  <ul class="pricing-content list-unstyled" style="background-color:#3d6c7f;">
+                        <li>
+                            <ul class="list-unstyled list-inline rating">
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star-half-empty fa-2x"></i></li>
+                                <li><i class="fa fa-star-o fa-2x"></i></li>
+                            </ul>
+                        </li>
+                        <li><i class="fa fa-gift"></i> Free customisation<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-inbox"></i> 24 hour support<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-globe"></i> 10 GB Disckspace<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-cloud-upload"></i> Cloud Storage<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-umbrella"></i> Online Protection</li>
+                    </ul>
+                    <div class="pricing-footer" style="background-color:#3d6c7f;">
+                        <h4><i>$</i>13<i>.99</i> <span>Per Month</span></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cloud Storage magna psum condimentum...</p>
+                        <a href="#" class="btn-u btn-brd btn-u-default btn-u-xs"><i class="fa fa-shopping-cart"></i> Purchase Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="pricing hover-effect pricing-square-border">
+                    <div class="pricing-head">
+                        <h3>Elite</h3>
+                    </div>
+                 <ul class="pricing-content list-unstyled" style="background-color:#2ec1ff;">
+                        <li>
+                            <ul class="list-unstyled list-inline rating">
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                            </ul>
+                        </li>
+                        <li><i class="fa fa-gift"></i> Free customisation<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-inbox"></i> 24 hour support<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-globe"></i> 10 GB Disckspace<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-cloud-upload"></i> Cloud Storage<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-umbrella"></i> Online Protection<span><i class="fa fa-check"></i></span></li>
+                    </ul>
+
+                    <div class="pricing-footer" style="background-color:#2ec1ff;">
+                        <h4><i>$</i>99<i>.00</i> <span>Per Month</span></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cloud Storage magna psum condimentum...</p>
+                        <a href="#" class="btn-u btn-brd btn-u-default btn-u-xs"><i class="fa fa-shopping-cart"></i> Purchase Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    <!-- End Pricing Dark -->
+    </div><!--/container-->
+
+    <!--<div class="call-action-v1">
+        <div class="container">
+            <div class="call-action-v1-box">
+                <div class="call-action-v1-in">
+                    <p>Unify creative technology company providing key digital services and focused on helping our clients to build a successful business on web and mobile.</p>
+                </div>
+                <div class="call-action-v1-in inner-btn page-scroll">
+                    <a href="#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-block">View Our Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</section>
+<!-- End Services Section -->
+
 <?php $this->beginBlock('JavascriptInit'); ?>
 
 <script type="text/javascript">
