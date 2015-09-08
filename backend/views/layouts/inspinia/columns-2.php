@@ -56,7 +56,7 @@ SiteIndexAsset::register($this);
                                 ['label' => 'Package', 'url' => ['package/index'],'icon'=>'fa fa-gift'],
                                 // 'Products' menu item will be selected as long as the route is 'product/index'
                                 ['label' => 'Lookup', 'url' => ['lookup/index']],
-                                ['label' => 'Contest', 'url' => ['contest/index']],
+                                ['label' => 'Campaign', 'url' => ['campaign/campaign']],
                                 ['label' => 'Rights', 'url' => '#','items' => [
                                     ['label' => 'Role', 'url' => ['role/index'],'icon'=>'fa fa-sitemap'],
                                     ['label' => 'Permission', 'url' => ['permission/index'],'icon'=>'fa fa-pencil-square-o'],

@@ -55,10 +55,8 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                     <li class="page-scroll">
                         <a href="#news">News</a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
-                    </li>                   
-                    <?php if(Yii::$app->user->isGuest):?>
+                                       
+                    <?php if(Yii::$app->user->isGuest):?>                        
                         <li class="page-scroll">
                             <a href="<?php echo Url::to(['site/signup']); ?>">Signup</a>
                         </li>
@@ -66,6 +64,9 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                             <a href="<?php echo Url::to(['site/login']); ?>">Login</a>
                         </li>
                     <?php else:?>
+                        <li class="page-scroll">
+                            <a href="<?php echo Url::to(['site/index']);?>">My Profile</a>
+                        </li>
                         <li class="page-scroll">
                             <?=html::a('Logout ('. Yii::$app->user->identity->username .')',['site/logout'], ['data-method' => 'POST'])?>
                         </li>
@@ -83,7 +84,6 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
 <div> <center><?=$referEmail; ?></center></div>
 <?php }?>
 
- 
 <!-- Intro Section -->
 <section id="intro" class="intro-section">
     <div class="fullscreenbanner-container">
