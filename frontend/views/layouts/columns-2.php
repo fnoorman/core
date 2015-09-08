@@ -48,7 +48,11 @@ SiteIndexAsset::register($this);
                             // Important: you need to specify url as 'controller/action',
                             // not just as 'controller' even if default action is used.
                             ['label' => 'Order', 'url' => ['site/orderform'],'icon'=>'fa fa-gift'],
-                            ['label' => 'Campaign', 'url' => ['campaign/campaign']],
+                            ['label' => 'Campaign', 'url' => '#',
+                                'items'=> [
+                                    ['label' => 'Review', 'url' => ['review/index'],'icon'=>'fa fa-book'],
+                                ]
+                            ],
                             ['label' => 'Rights', 'url' => '#','items' => [
                                 ['label' => 'Role', 'url' => ['role/index'],'icon'=>'fa fa-sitemap'],
                                 ['label' => 'Permission', 'url' => ['permission/index'],'icon'=>'fa fa-pencil-square-o'],
