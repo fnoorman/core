@@ -34,31 +34,29 @@ $this->params['activeMenu'] = $this->title;
                                             <?= GridView::widget([
                         'dataProvider' => $dataProvider,
                         'filterModel' => $searchModel,
-        'columns' => [
-                        ['class' => 'yii\grid\SerialColumn'],
+                        'columns' => [['class' => 'yii\grid\SerialColumn'],
 
-                                    'id',
-            'name',
-            'maxCallOut',
-            'maxAllowedCode',
-            'enable',
-            // 'code',
-            // 'videoMaxSize',
-            // 'pictureMaxSize',
-            // 'minBalance',
-            // 'update_by',
-            // 'update_at',
-            // 'create_by',
-            // 'created_at',
+                        'id',
+                        'name',
+                        'maxCallOut',
+                        'maxAllowedCode',
+                        'enable',
+                        // 'code',
+                        // 'videoMaxSize',
+                        // 'pictureMaxSize',
+                        // 'minBalance',
+                        // 'update_by',
+                        // 'update_at',
+                        // 'create_by',
+                        // 'created_at',
 
                         ['class' => 'yii\grid\ActionColumn'],
                         ],
                         ]); ?>
-                    
+
                 </div>
             </div>
         </div>
     </div>
 
 </div>
-
