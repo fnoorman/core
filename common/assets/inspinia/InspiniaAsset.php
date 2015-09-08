@@ -21,16 +21,12 @@ class InspiniaAsset extends AssetBundle
         'css/bootstrap.min.css',
         'font-awesome/css/font-awesome.css',
         'css/plugins/chosen/chosen.css',
-        'css/plugins/summernote/summernote.css',
-        'css/plugins/summernote/summernote-bs3.css',
-        'css/animate.css',
-        'css/style.css'
     ];
     public $js = [
         'js/bootstrap.min.js',
         'js/plugins/metisMenu/jquery.metisMenu.js',
         'js/plugins/slimscroll/jquery.slimscroll.min.js',
-        'js/plugins/campaignScript/campaignEngine.js',
+//        'js/plugins/campaignScript/campaignEngine.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

@@ -6,14 +6,11 @@
  * Time: 8:25 PM
  */
 use yii\helpers\Url;
-use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use common\components\Menu;
 use common\assets\inspinia\SiteIndexAsset;
 
 SiteIndexAsset::register($this);
-
-
 ?>
 
 <?php $this->beginContent('@backend/views/layouts/base.php');?>

@@ -36,11 +36,33 @@ $this->params['activeMenu'] = $this->title;
                         'filterModel' => $searchModel,
                         'columns' => [['class' => 'yii\grid\SerialColumn'],
 
-                        'id',
+                            [
+                                'attribute' => 'id',
+                                'format'=>'raw',
+                                'headerOptions'=>['width'=>'100px']
+                            ],
                         'name',
-                        'maxCallOut',
-                        'maxAllowedCode',
-                        'enable',
+                            [
+                                'attribute' => 'maxCallOut',
+                                'format'=>'raw',
+                                'headerOptions'=>['width'=>'100px']
+                            ],
+                            [
+                                'attribute' => 'maxAllowedCode',
+                                'format'=>'raw',
+                                'headerOptions'=>['width'=>'100px']
+                            ],
+//                        'maxCallOut',
+//                        'maxAllowedCode',
+                            [
+                                'attribute' => 'enable',
+                                'format'=>'raw',
+                                'value'=> function($model){
+                                    return $model->StatusText();
+                                },
+                                'headerOptions'=>['width'=>'100px']
+                            ],
+//                        'enable',
                         // 'code',
                         // 'videoMaxSize',
                         // 'pictureMaxSize',
