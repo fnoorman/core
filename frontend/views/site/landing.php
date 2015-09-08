@@ -92,7 +92,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                 <!-- SLIDE 1 -->
                 <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700" data-title="Slide 1">
                     <!-- MAIN IMAGE -->
-                    <img src="<?=$defaultBundle->baseUrl?>/img/sliders/revolution/bghybrizynew1.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                    <img src="img/sliders/revolution/bghybrizynew1.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
 
                     <!-- LAYERS -->
                     <!-- <div class="tp-caption rs-caption-1 sft start"
@@ -142,7 +142,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                 <!-- SLIDE 2 -->
                 <li data-transition="slideup" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
                     <!-- MAIN IMAGE -->
-                    <img src="<?=$defaultBundle->baseUrl?>/img/sliders/revolution/bghybrizynew2.jpg" alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                    <img src="img/sliders/revolution/bghybrizynew2.jpg" alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
 
                     <!-- LAYERS -->
                     <!-- <div class="tp-caption rs-caption-1 sft start"
@@ -192,7 +192,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                 <!-- SLIDE 3 -->
                 <li data-transition="slideup" data-slotamount="5" data-masterspeed="700"  data-title="Slide 3">
                     <!-- MAIN IMAGE -->
-                    <img src="<?=$defaultBundle->baseUrl?>/img/sliders/revolution/bghybrizy2.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                    <img src="img/sliders/revolution/bghybrizy2.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
 
                     <!-- LAYERS -->
                     <!-- <div class="tp-caption rs-caption-1 sft start"
