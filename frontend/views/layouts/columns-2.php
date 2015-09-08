@@ -241,5 +241,6 @@ SiteIndexAsset::register($this);
             </div>
         </div>
     </div>
+    
 
 <?php $this->endContent('');?>

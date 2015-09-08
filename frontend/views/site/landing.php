@@ -78,7 +78,9 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
     <!-- /.container -->
 </nav>
 <!--=== End Header ===-->
+<?php if(isset($referEmail)):?>
 <div> <center><?=$referEmail?></center></div>
+<?php endif?>
 <!-- Intro Section -->
 <section id="intro" class="intro-section">
     <div class="fullscreenbanner-container">
