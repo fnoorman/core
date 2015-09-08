@@ -11,6 +11,7 @@ use common\assets\unify\IE8SliderUnifyAsset;
 use common\assets\unify\SingleUnifyAsset;
 use common\assets\unify\UnifyMediaAsset;
 use common\widgets\Alert;
+use yii\helpers\Url;
 
 $defaultBundle = DefaultUnifyAsset::register($this);
 SingleUnifyAsset::register($this);
@@ -56,13 +57,19 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                     </li>
                     <li class="page-scroll">
                         <a href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="../index.html">Main</a>
-                    </li>
+                    </li>                   
+                    <?php if(Yii::$app->user->isGuest):?>
+                        <li class="page-scroll">
+                            <a href="<?php echo Url::to(['site/signup']); ?>">Signup</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="<?php echo Url::to(['site/login']); ?>">Login</a>
+                        </li>
+                    <?php else:?>
+                        <li class="page-scroll">
+                            <?=html::a('Logout ('. Yii::$app->user->identity->username .')',['site/logout'], ['data-method' => 'POST'])?>
+                        </li>
+                    <?php endif;?>
                 </ul>
             </div>
         </div>
@@ -72,6 +79,11 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
 </nav>
 <!--=== End Header ===-->
 
+<?php if(isset($referEmail)) { ?>
+<div> <center><?=$referEmail; ?></center></div>
+<?php }?>
+
+ 
 <!-- Intro Section -->
 <section id="intro" class="intro-section">
     <div class="fullscreenbanner-container">
@@ -91,7 +103,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                          data-start="2000"
                          data-easing="Back.easeInOut"
                          data-endspeed="300">
-                        WE ARE UNIFY CREATIVE TECHNOLOGY COMPANY
+                        WE ARE UNIFY CREATIVE COMPANY 
                     </div>
 
                     <!-- LAYER -->
@@ -233,6 +245,246 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
     </div>
 </section>
 <!-- End Intro Section -->
+
+<!--  About Section -->
+<section id="about" class="about-section section-first">
+    <div class="block-v1">
+        <div class="container">
+            <div class="title-v1">
+                <h1>What is Hybrizy?</h1>
+                <p>Hybrizy is a new web and mobile application that combine both physical and digital contents by using pre-generated codes. In simpler words, Hybrizy is your one-code-solution to your new and improvised paper products.</p>                
+            </div>
+            <div class="row content-boxes-v3">
+                <div class="col-md-4 md-margin-bottom-30">
+                    <i class="icon-custom rounded-x icon-bg-dark fa fa-lightbulb-o" style="background-color:#17607f;"></i>
+                    <div class="content-boxes-in-v3">
+                        <h2 class="heading-sm">Printed agencies</h2>
+                        <p>A key to elevate your printed materials into a new level. Hybrizy promotes a new type of combination reading that aids readers in experiencing enhanced reading. </p>
+                    </div>
+                </div>
+                <div class="col-md-4 md-margin-bottom-30">
+                    <i class="icon-custom rounded-x icon-bg-dark fa fa-flask" style="background-color:#17607f;"></i>
+                    <div class="content-boxes-in-v3">
+                        <h2 class="heading-sm">Electronic industry</h2>
+                        <p>Hybrizy can provide the answer to your dilemma by using this tiny code to store all your visual adaptation. Any contests or even music videos can be stored into this tiny code.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <i class="icon-custom rounded-x icon-bg-dark fa fa-bolt" style="background-color:#17607f;"></i>
+                    <div class="content-boxes-in-v3">
+                        <h2 class="heading-sm">Individuals</h2>
+                        <p>Hybrizy is your key in creating a cutting edge document storage experience. You can customize on what you want people to find in the Hybrizy code by managing it through your dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-image bg-grey" style="background-color:#7bd8ff;">
+        <div class="container">
+            <div class="title-v1">
+                <h1>MERGING PAPER AND DIGITAL WITH EASE</h1>
+                <p style="color:#333;">Hybrizy lets you spice up your <strong>Plain Old </strong>text-on-paper by adding value to your print products. <br>
+                Hybrizy can solve your dilemma by providing a <strong>Tiny Code </strong>that promises awesome feedback from your customers and audiences.</p>
+            </div>
+            <div class="img-center">
+                <img class="img-responsive" src="img/mockup/HYBRIZYBANNER.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container content-lg">
+        <div class="title-v1">
+            <h2>Our Vision And Mission</h2>
+            <p>Brings new <strong>Innovation Perspective </strong>to printing media in the new age. <br>
+            <!-- Providing <strong>One-Code-Solution </strong>to your new and improvised printing products.</p> -->
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 content-boxes-v3 margin-bottom-40">
+                <div class="clearfix margin-bottom-30" style="background-color:#7bd8ff;padding-left:20px;padding-top:10px;">
+                    <i class="icon-custom icon-md rounded-x icon-bg-u icon-line icon-trophy"></i>
+                    <div class="content-boxes-in-v3">
+                        <h2 class="heading-sm">New Approach &amp; Solution</h2>
+                        <p>Hybrizy is the new and innovative web and mobile application that makes ordinary paper products become extra-ordinary.</p>
+                    </div>
+                </div>
+                <div class="clearfix margin-bottom-30" style="background-color:#17607f;padding-left:20px;padding-top:10px;">
+                    <i class="icon-custom icon-md rounded-x icon-bg-u icon-line icon-directions" style="background-color:#29abe2;"></i>
+                    <div class="content-boxes-in-v3">
+                        <h2 class="heading-sm" style="color:#fff;">Ease of Accessibilities</h2>
+                        <p style="color:#fff;">Provide multiple platform for mobiles, tablets and PC's. So you can access it anywhere and anytime by using a specific code. </p>
+                    </div>
+                </div>
+                <div class="clearfix margin-bottom-30" style="padding-left:20px;padding-top:10px;">
+                    <i class="icon-custom icon-md rounded-x icon-bg-u icon-line icon-diamond"></i>
+                    <div class="content-boxes-in-v3">
+                        <h2 class="heading-sm">Customize Content</h2>
+                        <p>It can be anything such as campaigns, products, contests and etc according to your own creativity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <img class="img-responsive" src="img/mockup/HYBRIZYBANNER2.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="parallax-counter parallaxBg" style="background-color:#29abe2;">
+        <div class="container">
+            <div class="parallax-quote-in">
+                <p>We do not simplify things but we give something <br>more manageable.</p>
+                <small>- Hybrizy -</small>
+            </div>
+        </div>
+    </div>
+</section>
+<!--  About Section -->
+
+<!-- Services Section -->
+<section id="services">
+    <div class="container content-lg">
+        <div class="title-v1">
+            <h2>Hybrizy Packages &amp; Pricing</h2>
+            <p>You can choose the packages that suit your needs.<br>
+            Each package contain different features.</p>
+        </div>
+        <!-- <div class="container content"> -->
+        <!-- Pricing Dark -->
+        <div class="row margin-bottom-20 pricing-dark">
+            <div class="col-md-3 col-sm-6">
+                <div class="pricing hover-effect">
+                    <div class="pricing-head">
+                        <h3>Begginer</h3>
+                    </div>
+                    <ul class="pricing-content list-unstyled" style="background-color:#17607f;">
+                        <li>
+                            <ul class="list-unstyled list-inline rating">
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star-half-empty fa-2x"></i></li>
+                                <li><i class="fa fa-star-o fa-2x"></i></li>
+                                <li><i class="fa fa-star-o fa-2x"></i></li>
+                                <li><i class="fa fa-star-o fa-2x"></i></li>
+                            </ul>
+                        </li>
+                        <li><i class="fa fa-gift"></i> Free customisation <span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-inbox"></i> 24 hour support<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-globe"></i> 10 GB Disckspace</li>
+                        <li><i class="fa fa-cloud-upload"></i> Cloud Storage</li>
+                        <li><i class="fa fa-umbrella"></i> Online Protection</li>
+                    </ul>
+                    <div class="pricing-footer" style="background-color:#17607f;">
+                        <h4><i>$</i>5<i>.49</i> <span>Per Month</span></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cloud Storage magna psum condimentum...</p>
+                        <a href="#" class="btn-u btn-brd btn-u-default btn-u-xs"><i class="fa fa-shopping-cart"></i> Purchase Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="pricing hover-effect pricing-square-border">
+                    <div class="pricing-head">
+                        <h3>Pro</h3>
+                    </div>
+                    <ul class="pricing-content list-unstyled" style="background-color:#2ec1ff;">
+                        <li>
+                            <ul class="list-unstyled list-inline rating">
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star-half-empty fa-2x"></i></li>
+                                <li><i class="fa fa-star-o fa-2x"></i></li>
+                                <li><i class="fa fa-star-o fa-2x"></i></li>
+                            </ul>
+                        </li>
+                        <li><i class="fa fa-gift"></i> Free customisation<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-inbox"></i> 24 hour support<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-globe"></i> 10 GB Disckspace<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-cloud-upload"></i> Cloud Storage</li>
+                        <li><i class="fa fa-umbrella"></i> Online Protection</li>
+                    </ul>
+                    <div class="pricing-footer" style="background-color:#2ec1ff;">
+                        <h4><i>$</i>8<i>.69</i> <span>Per Month</span></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cloud Storage magna psum condimentum...</p>
+                        <a href="#" class="btn-u btn-brd btn-u-default btn-u-xs"><i class="fa fa-shopping-cart"></i> Purchase Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="pricing hover-effect pricing-square-border">
+                    <div class="pricing-head">
+                        <h3>Premium</h3>
+                    </div>
+                  <ul class="pricing-content list-unstyled" style="background-color:#3d6c7f;">
+                        <li>
+                            <ul class="list-unstyled list-inline rating">
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star-half-empty fa-2x"></i></li>
+                                <li><i class="fa fa-star-o fa-2x"></i></li>
+                            </ul>
+                        </li>
+                        <li><i class="fa fa-gift"></i> Free customisation<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-inbox"></i> 24 hour support<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-globe"></i> 10 GB Disckspace<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-cloud-upload"></i> Cloud Storage<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-umbrella"></i> Online Protection</li>
+                    </ul>
+                    <div class="pricing-footer" style="background-color:#3d6c7f;">
+                        <h4><i>$</i>13<i>.99</i> <span>Per Month</span></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cloud Storage magna psum condimentum...</p>
+                        <a href="#" class="btn-u btn-brd btn-u-default btn-u-xs"><i class="fa fa-shopping-cart"></i> Purchase Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="pricing hover-effect pricing-square-border">
+                    <div class="pricing-head">
+                        <h3>Elite</h3>
+                    </div>
+                 <ul class="pricing-content list-unstyled" style="background-color:#2ec1ff;">
+                        <li>
+                            <ul class="list-unstyled list-inline rating">
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                                <li><i class="fa fa-star fa-2x"></i></li>
+                            </ul>
+                        </li>
+                        <li><i class="fa fa-gift"></i> Free customisation<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-inbox"></i> 24 hour support<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-globe"></i> 10 GB Disckspace<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-cloud-upload"></i> Cloud Storage<span><i class="fa fa-check"></i></span></li>
+                        <li><i class="fa fa-umbrella"></i> Online Protection<span><i class="fa fa-check"></i></span></li>
+                    </ul>
+
+                    <div class="pricing-footer" style="background-color:#2ec1ff;">
+                        <h4><i>$</i>99<i>.00</i> <span>Per Month</span></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cloud Storage magna psum condimentum...</p>
+                        <a href="#" class="btn-u btn-brd btn-u-default btn-u-xs"><i class="fa fa-shopping-cart"></i> Purchase Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    <!-- End Pricing Dark -->
+    </div><!--/container-->
+
+    <!--<div class="call-action-v1">
+        <div class="container">
+            <div class="call-action-v1-box">
+                <div class="call-action-v1-in">
+                    <p>Unify creative technology company providing key digital services and focused on helping our clients to build a successful business on web and mobile.</p>
+                </div>
+                <div class="call-action-v1-in inner-btn page-scroll">
+                    <a href="#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-block">View Our Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</section>
+<!-- End Services Section -->
 
 <?php $this->beginBlock('JavascriptInit'); ?>
 

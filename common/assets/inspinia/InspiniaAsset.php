@@ -20,6 +20,7 @@ class InspiniaAsset extends AssetBundle
     public $css = [
         'css/bootstrap.min.css',
         'font-awesome/css/font-awesome.css',
+        'css/plugins/chosen/chosen.css',
         'css/animate.css',
         'css/style.css'
     ];
@@ -27,6 +28,7 @@ class InspiniaAsset extends AssetBundle
         'js/bootstrap.min.js',
         'js/plugins/metisMenu/jquery.metisMenu.js',
         'js/plugins/slimscroll/jquery.slimscroll.min.js',
+        'js/plugins/campaignScript/campaignEngine.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
