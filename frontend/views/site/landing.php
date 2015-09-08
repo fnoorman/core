@@ -34,8 +34,8 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
             </button>
 
             <a class="navbar-brand" href="#intro">
-                <span>U</span>nify
-                <!-- <img src="assets/img/logo1.png" alt="Logo"> -->
+                <!-- <span>U</span>nify -->
+                <img src="assets/img/logo1.png" alt="Logo">
             </a>
         </div>
 
