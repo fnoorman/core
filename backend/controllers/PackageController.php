@@ -8,7 +8,7 @@ use common\models\PackageSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use common\models\Offer;
 /**
  * PackageController implements the CRUD actions for Package model.
  */
@@ -49,8 +49,11 @@ class PackageController extends Controller
      */
     public function actionView($id)
     {
+        $offerModel = new Offer();
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model'     => $this->findModel($id),
+            'offerModel'=> $offerModel
         ]);
     }
 
@@ -119,4 +122,70 @@ class PackageController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+
+    /**
+     * @return string
+     * @throws NotFoundHttpException
+     */
+    public function actionAddOffer()
+    {
+        $packageId = Yii::$app->request->post('Offer')['package_id'];
+        $offerModel = new Offer();
+        if ($offerModel->load(Yii::$app->request->post()) && $offerModel->save()) {
+            $offerModel = new Offer();
+        }
+
+        return $this->render('view', [
+            'model'     => $this->findModel($packageId),
+            'offerModel'=> $offerModel
+        ]);
+
+
+    }
+
+    /**
+     * @param $offerId
+     * @param $packageId
+     * @return string
+     * @throws NotFoundHttpException
+     */
+    public function actionLoadOffer($offerId,$packageId)
+    {
+
+        return $this->render('view', [
+            'model'     => $this->findModel($packageId),
+            'offerModel'=> Offer::findOne($offerId)
+        ]);
+
+
+    }
+
+    /**
+     * @param $offerId
+     * @return string|\yii\web\Response
+     * @throws NotFoundHttpException
+     */
+    public function actionUpdateOffer($offerId)
+    {
+        $packageId = Yii::$app->request->post('Offer')['package_id'];
+        $offerModel = Offer::findOne($offerId);
+        if ($offerModel->load(Yii::$app->request->post()) && $offerModel->save()) {
+            return $this->redirect(['view', 'id' => $packageId]);
+        } else {
+            return $this->render('view', [
+                'offerModel' => $offerModel,
+                'model'     => $this->findModel($packageId),
+            ]);
+        }
+    }
+
+    public function actionDeleteOffer($offerId,$packageId)
+    {
+        Offer::findOne($offerId)->delete();
+        return $this->redirect(['view', 'id' => $packageId]);
+
+    }
+
+
 }

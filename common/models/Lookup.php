@@ -94,9 +94,7 @@ class Lookup extends \yii\db\ActiveRecord
     private static function loadItems($type)
     {
         self::$_items[$type]=[];
-        $models = self::findAll([
-            'type'=>'$type',
-        ])->orderBy('position');
+        $models = self::find()->where(['type'=>$type])->orderBy('position')->all();
         foreach($models as $model)
             self::$_items[$type][$model->code]=$model->name;
     }

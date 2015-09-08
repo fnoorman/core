@@ -6,6 +6,7 @@ use Yii;
 use common\models\Lookup;
 use yii\helpers\ArrayHelper;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\Html;
 
 /**
  * This is the model class for table "{{%package}}".
@@ -20,7 +21,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $pictureMaxSize
  * @property integer $minBalance
  * @property integer $update_by
- * @property integer $update_at
+ * @property integer $updated_at
  * @property integer $create_by
  * @property integer $created_at
  *
@@ -54,7 +55,7 @@ class Package extends \yii\db\ActiveRecord
     {
         return [
             [['maxCallOut', 'maxAllowedCode'], 'required'],
-            [['maxCallOut', 'maxAllowedCode', 'enable', 'minBalance', 'update_by', 'update_at', 'create_by', 'created_at'], 'integer'],
+            [['maxCallOut', 'maxAllowedCode', 'enable', 'minBalance', 'update_by', 'updated_at', 'create_by', 'created_at'], 'integer'],
             [['name'], 'string', 'max' => 80],
             [['code'], 'string', 'max' => 19],
             [['videoMaxSize', 'pictureMaxSize'], 'string', 'max' => 7],
@@ -78,7 +79,7 @@ class Package extends \yii\db\ActiveRecord
             'pictureMaxSize' => Yii::t('app', 'Picture Max Size'),
             'minBalance' => Yii::t('app', 'Balance Callouts'),
             'update_by' => Yii::t('app', 'Update By'),
-            'update_at' => Yii::t('app', 'Update At'),
+            'updated_at' => Yii::t('app', 'Update At'),
             'create_by' => Yii::t('app', 'Create By'),
             'created_at' => Yii::t('app', 'Created At'),
         ];
@@ -107,4 +108,27 @@ class Package extends \yii\db\ActiveRecord
         return $statusLookup;
         //return ArrayHelper::map($statusLookup,'code','name');
     }
+
+    public function StatusText()
+    {
+        $statusLookup = Lookup::items('Status-Package');
+        return $statusLookup[$this->enable];
+    }
+
+    public function ItemOfferDropDownOption()
+    {
+        $itemOfferLookup = Lookup::items('Item-Offer');
+        return $itemOfferLookup;
+    }
+
+    public function IconOfferDropDownOption()
+    {
+        $iconOfferLookup = Lookup::items('Icon-Offer');
+//        foreach ($iconOfferLookup as $key => $value) {
+//            $iconOfferLookup[$key] = Html::tag('i',null,['class'=>'fa '.$value]);
+//        }
+        return $iconOfferLookup;
+    }
+
+
 }
