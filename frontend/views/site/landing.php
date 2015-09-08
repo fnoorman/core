@@ -92,10 +92,10 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                 <!-- SLIDE 1 -->
                 <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700" data-title="Slide 1">
                     <!-- MAIN IMAGE -->
-                    <img src="<?=$defaultBundle->baseUrl?>/img/sliders/revolution/bg1.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                    <img src="<?=$defaultBundle->baseUrl?>/img/sliders/revolution/bghybrizynew1.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
 
                     <!-- LAYERS -->
-                    <div class="tp-caption rs-caption-1 sft start"
+                    <!-- <div class="tp-caption rs-caption-1 sft start"
                          data-x="center"
                          data-hoffset="0"
                          data-y="100"
@@ -104,10 +104,10 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                          data-easing="Back.easeInOut"
                          data-endspeed="300">
                         WE ARE UNIFY CREATIVE COMPANY 
-                    </div>
+                    </div> -->
 
                     <!-- LAYER -->
-                    <div class="tp-caption rs-caption-2 sft"
+                    <!-- <div class="tp-caption rs-caption-2 sft"
                          data-x="center"
                          data-hoffset="0"
                          data-y="200"
@@ -120,10 +120,10 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                          style="z-index: 6">
                         Creative freedom matters user experience.<br>
                         We minimize the gap between technology and its audience.
-                    </div>
+                    </div> -->
 
                     <!-- LAYER -->
-                    <div class="tp-caption rs-caption-3 sft"
+                    <!-- <div class="tp-caption rs-caption-3 sft"
                          data-x="center"
                          data-hoffset="0"
                          data-y="360"
@@ -136,16 +136,16 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                          style="z-index: 6">
                         <span class="page-scroll"><a href="#about" class="btn-u btn-brd btn-brd-hover btn-u-light">Learn More</a></span>
                         <span class="page-scroll"><a href="#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-light">Our Work</a></span>
-                    </div>
+                    </div> -->
                 </li>
 
                 <!-- SLIDE 2 -->
                 <li data-transition="slideup" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
                     <!-- MAIN IMAGE -->
-                    <img src="<?=$defaultBundle->baseUrl?>/img/sliders/revolution/bg2.jpg" alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                    <img src="<?=$defaultBundle->baseUrl?>/img/sliders/revolution/bghybrizynew2.jpg" alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
 
                     <!-- LAYERS -->
-                    <div class="tp-caption rs-caption-1 sft start"
+                    <!-- <div class="tp-caption rs-caption-1 sft start"
                          data-x="center"
                          data-hoffset="0"
                          data-y="100"
@@ -154,10 +154,10 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                          data-easing="Back.easeInOut"
                          data-endspeed="300">
                         DEDICATED ADVANCED TEAM
-                    </div>
+                    </div> -->
 
                     <!-- LAYER -->
-                    <div class="tp-caption rs-caption-2 sft"
+                    <!-- <div class="tp-caption rs-caption-2 sft"
                          data-x="center"
                          data-hoffset="0"
                          data-y="200"
@@ -170,10 +170,10 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                          style="z-index: 6">
                         We are creative technology company providing<br>
                         key digital services on web and mobile.
-                    </div>
+                    </div> -->
 
                     <!-- LAYER -->
-                    <div class="tp-caption rs-caption-3 sft"
+                    <!-- <div class="tp-caption rs-caption-3 sft"
                          data-x="center"
                          data-hoffset="0"
                          data-y="360"
@@ -186,16 +186,16 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                          style="z-index: 6">
                         <span class="page-scroll"><a href="#about" class="btn-u btn-brd btn-brd-hover btn-u-light">Learn More</a></span>
                         <span class="page-scroll"><a href="#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-light">Our Work</a></span>
-                    </div>
+                    </div> -->
                 </li>
 
                 <!-- SLIDE 3 -->
                 <li data-transition="slideup" data-slotamount="5" data-masterspeed="700"  data-title="Slide 3">
                     <!-- MAIN IMAGE -->
-                    <img src="<?=$defaultBundle->baseUrl?>/img/sliders/revolution/bg3.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                    <img src="<?=$defaultBundle->baseUrl?>/img/sliders/revolution/bghybrizy2.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
 
                     <!-- LAYERS -->
-                    <div class="tp-caption rs-caption-1 sft start"
+                    <!-- <div class="tp-caption rs-caption-1 sft start"
                          data-x="center"
                          data-hoffset="0"
                          data-y="110"
@@ -204,10 +204,10 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                          data-easing="Back.easeInOut"
                          data-endspeed="300">
                         WE DO THINGS DIFFERENTLY
-                    </div>
+                    </div> -->
 
                     <!-- LAYER -->
-                    <div class="tp-caption rs-caption-2 sfb"
+                    <!-- <div class="tp-caption rs-caption-2 sfb"
                          data-x="center"
                          data-hoffset="0"
                          data-y="210"
@@ -220,10 +220,10 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                          style="z-index: 6">
                         Creative freedom matters user experience.<br>
                         We minimize the gap between technology and its audience.
-                    </div>
+                    </div> -->
 
                     <!-- LAYER -->
-                    <div class="tp-caption rs-caption-3 sfb"
+                    <!-- <div class="tp-caption rs-caption-3 sfb"
                          data-x="center"
                          data-hoffset="0"
                          data-y="370"
@@ -236,7 +236,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                          style="z-index: 6">
                         <span class="page-scroll"><a href="#about" class="btn-u btn-brd btn-brd-hover btn-u-light">Learn More</a></span>
                         <span class="page-scroll"><a href="#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-light">Our Work</a></span>
-                    </div>
+                    </div> -->
                 </li>
             </ul>
             <div class="tp-bannertimer tp-bottom"></div>
