@@ -276,7 +276,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                 Hybrizy can solve your dilemma by providing a <strong>Tiny Code </strong>that promises awesome feedback from your customers and audiences.</p>
             </div>
             <div class="img-center">
-                <img class="img-responsive" src="<?=$defaultBundle->baseUrl?>/img/mockup/HYBRIZYBANNER.png" alt="">
+                <img class="img-responsive" src="img/mockup/HYBRIZYBANNER.png" alt="">
             </div>
         </div>
     </div>
@@ -314,7 +314,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
             </div>
 
             <div class="col-md-6">
-                <img class="img-responsive" src="unify/assets/img/mockup/HYBRIZYBANNER2.png" alt="">
+                <img class="img-responsive" src="img/mockup/HYBRIZYBANNER2.png" alt="">
             </div>
         </div>
     </div>
