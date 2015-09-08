@@ -120,8 +120,9 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
  
             //return $this->actionIndex();
-            	$this->layout = "columns-2";
-        	return $this->render('index', ['model' => $model,]);
+            return $this->goHome();
+            	//$this->layout = "columns-2";
+        	//return $this->render('index', ['model' => $model,]);
  
         } else {
             $this->layout='inspinia/base';
@@ -224,11 +225,11 @@ class SiteController extends Controller
                 ));
                 
                 $sendMail = \Yii::$app->mailer->compose()
-    		->setFrom([\Yii::$app->params['supportEmail'] => $hybrizyAdmin])
-   	        ->setTo($to)
-   		->setSubject($subject)
-   		->setHtmlBody($message)
-   		->send(); 
+                ->setFrom([\Yii::$app->params['supportEmail'] => $hybrizyAdmin])
+                ->setTo($to)
+                ->setSubject($subject)
+                ->setHtmlBody($message)
+                ->send();
 
                 if($sendMail)
                     //return $this->actionIndex('Sila Rujuk email!');
@@ -259,8 +260,6 @@ class SiteController extends Controller
         //$model = new User();
         $key = Yii::$app->request->get('key');
         $email = Yii::$app->request->get('email');
- 
- 
 
         $model = User::findByEmail($email, User::STATUS_PENDING_VERIFICATION);
 
