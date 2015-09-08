@@ -103,7 +103,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                          data-start="2000"
                          data-easing="Back.easeInOut"
                          data-endspeed="300">
-                        WE ARE UNIFY CREATIVE TECHNOLOGY COMPANY
+                        WE ARE UNIFY CREATIVE COMPANY 
                     </div>
 
                     <!-- LAYER -->
