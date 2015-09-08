@@ -243,7 +243,7 @@ SiteIndexAsset::register($this);
                 </ul>
             </div>
         </div>
-        <?=$content?>
+        <?= $content ?>
     </div>
 
 <?php $this->endContent('');?>
