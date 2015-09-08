@@ -120,8 +120,9 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
  
             //return $this->actionIndex();
-            	$this->layout = "columns-2";
-        	return $this->render('index', ['model' => $model,]);
+            return $this->goHome();
+            	//$this->layout = "columns-2";
+        	//return $this->render('index', ['model' => $model,]);
  
         } else {
             $this->layout='inspinia/base';
