@@ -23,12 +23,17 @@ SiteIndexAsset::register($this);
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?=ucfirst(Yii::$app->user->identity->username)?></strong>
                              </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+                             
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="profile.html">Profile</a></li>
                                 <li><a href="contacts.html">Contacts</a></li>
                                 <li><a href="mailbox.html">Mailbox</a></li>
                                 <li class="divider"></li>
-                                <li><a href="login.html">Logout</a></li>
+                                <li>
+                                <a href="<?=Url::to(['site/logout'])?>" data-method="post">
+                            	<i class="fa fa-sign-out"></i> Log out
+                        	</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="logo-element">
@@ -45,7 +50,7 @@ SiteIndexAsset::register($this);
                         </ul>
                     </li>
                     <li>
-                        <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
+                        <a href="<?=Url::to(['site/campaign'])?>"><i class="fa fa-diamond"></i> <span class="nav-label">Campaign</span></a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
@@ -233,13 +238,12 @@ SiteIndexAsset::register($this);
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
-                        <a href="<?=Url::to(['site/logout'])?>" data-method="post">
-                            <i class="fa fa-sign-out"></i> Log out
-                        </a>
+                        <!--<a href="<?=Url::to(['site/logout'])?>" data-method="post"> <i class="fa fa-sign-out"></i> Log out</a> -->
                     </li>
                 </ul>
             </div>
         </div>
+        <?= $content ?>
     </div>
     
 

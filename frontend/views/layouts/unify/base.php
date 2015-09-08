@@ -30,8 +30,11 @@ $baseBundle = UnifyThemeAsset::register($this);
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
         <!-- CSS Theme -->
-        <link rel="stylesheet" href="<?=$baseBundle->baseUrl?>/css/theme-colors/default.css" id="style_color">
-        <link rel="stylesheet" href="<?=$baseBundle->baseUrl?>/css/theme-skins/one.dark.css">
+        <link rel="stylesheet" href="<?=$baseBundle->baseUrl?>/css/theme-colors/blue.css" id="style_color">
+        <!-- <link rel="stylesheet" href="<?=$baseBundle->baseUrl?>/css/theme-skins/one.dark.css"> -->
+
+        <!-- Pricing table css -->
+        <link rel="stylesheet" href="css/pages/page_pricing.css">
 
         <!-- CSS Customization -->
         <link rel="stylesheet" href="<?=$baseBundle->baseUrl?>/css/custom.css">

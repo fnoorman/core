@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use Yii;
 use common\models\User;
 use common\models\LoginForm;
+use common\models\OrderForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -20,7 +21,7 @@ use yii\filters\AccessControl;
 class SiteController extends Controller
 {
     public $layout;
-
+    public $enableCsrfValidation = true;
     /**
      * @inheritdoc
      */
@@ -81,9 +82,28 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = "columns-2";
-        return $this->render('index');
+    	if (!\Yii::$app->user->isGuest) {
+        	$this->layout = "columns-2";
+        	return $this->render('index');
+        }else {
+            return $this->actionLogin();
+        }
     }
+    /**
+     * Displays campaign page.
+     *
+     * @return mixed
+     */
+    public function actionCampaign()
+    {
+
+    	if (!\Yii::$app->user->isGuest) {
+        	$this->layout = "columns-2";
+        	return $this->render('campaign',['title'=> 'Campaign']);
+        }else {
+            return $this->actionLogin();
+        }
+    }    
 
     /**
      * Logs in a user.
@@ -98,11 +118,11 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            //return $this->goBack();
+ 
+            //return $this->actionIndex();
             	$this->layout = "columns-2";
-        	return $this->render('index', [
-                'model' => $model,
-            ]);
+        	return $this->render('index', ['model' => $model,]);
+ 
         } else {
             $this->layout='inspinia/base';
             return $this->render('hybrizy-login', [
@@ -313,5 +333,84 @@ class SiteController extends Controller
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
+    }
+    public function actionOrderform()
+    {
+          $this->layout = 'main';
+          $model = new OrderForm();
+          if ($model->load(Yii::$app->request->post()) && $model->save()) {
+              return $this->redirect(['orderview', 'id' => $model->id]);
+
+          } else {
+              return $this->render('orderform', [
+                  'model' => $model,
+                  'firstName' => $model->firstName,
+              ]);
+          }
+
+
+    }
+    public function beforeAction($action)
+    {
+        if ($action->id === 'paymentsuccess') {
+            $this->enableCsrfValidation = false;
+        }else {
+             $this->enableCsrfValidation = true;
+        }
+
+        return parent::beforeAction($action);
+    }
+    public function actionOrderview($id)
+    {
+        $this->layout = "inspinia/base";
+
+        return $this->render('orderview', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    public function actionPaymentsuccess()
+    {
+    //Yii::app()->request->enableCsrfValidation = false;
+       // $this->enableCsrfValidation = false;
+        $this->layout = "main";
+        $molpayReturn = [];
+            $molpayReturn['tranID'] = Yii::$app->request->post('tranID');
+            $molpayReturn['orderid'] = Yii::$app->request->post('orderid');
+            $molpayReturn['status'] = Yii::$app->request->post('status');
+            $molpayReturn['domain'] = Yii::$app->request->post('domain');
+            $molpayReturn['amount'] = Yii::$app->request->post('amount');
+            $molpayReturn['currency'] = Yii::$app->request->post('currency');
+            $molpayReturn['appcode'] = Yii::$app->request->post('appcode');
+            $molpayReturn['paydate'] = Yii::$app->request->post('paydate');
+            $molpayReturn['channel'] = Yii::$app->request->post('channel');
+            $molpayReturn['skey'] = Yii::$app->request->post('skey');
+            $molpayReturn['error_code'] = Yii::$app->request->post('error_code');
+            $molpayReturn['error_desc'] = Yii::$app->request->post('error_desc');
+
+
+         //print_r($molpayReturn);
+         //return $this->render('molpayReturn');
+         return $this->render('paymentsuccess',
+         ['returnData' => $molpayReturn]
+
+         );
+
+    }
+
+    protected function findModel($id)
+    {
+        if (($model = OrderForm::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    public function actionDeletecartitem($id)
+    {
+        $this->findModel($id)->delete();
+
+        return $this->redirect(['orderview']);
     }
 }
