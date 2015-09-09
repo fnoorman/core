@@ -339,12 +339,15 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
     </div>
 
     <style type="text/css">
-        .parallax-counter {
+        .parallax-quote {
         padding: 30px 0;
-        background: #fff;
+        background: rgba(0,0,0,0.8);
     }
+    .parallax-quote:after {
+     background: rgba(0,0,0,0.2);
+}
     </style>
-    <div class="parallax-counter parallaxBg" style="background-color:#17607f;">
+    <div class="parallax-quote parallaxBg" style="background-color:#17607f;">
         <div class="container">
             <div class="parallax-quote-in">
                 <p>We do not simplify things but we give something <br>more manageable.</p>
