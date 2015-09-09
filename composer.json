@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "*",
         "codeception/codeception": "2.0.*",
         "codeception/specify": "*",
-        "vimeo/vimeo-api": "~1.2"
+        "vimeo/vimeo-api": "~1.2",
+        "2amigos/yii2-ckeditor-widget": "~1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

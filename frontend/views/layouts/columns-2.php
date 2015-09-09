@@ -48,7 +48,11 @@ SiteIndexAsset::register($this);
                             // Important: you need to specify url as 'controller/action',
                             // not just as 'controller' even if default action is used.
                             ['label' => 'Order', 'url' => ['site/orderform'],'icon'=>'fa fa-gift'],
-                            ['label' => 'Campaign', 'url' => ['campaign/campaign']],
+                            ['label' => 'Campaign', 'url' => '#',
+                                'items'=> [
+                                    ['label' => 'Review', 'url' => ['review/index'],'icon'=>'fa fa-book'],
+                                ]
+                            ],
                             ['label' => 'Rights', 'url' => '#','items' => [
                                 ['label' => 'Role', 'url' => ['role/index'],'icon'=>'fa fa-sitemap'],
                                 ['label' => 'Permission', 'url' => ['permission/index'],'icon'=>'fa fa-pencil-square-o'],
@@ -59,23 +63,21 @@ SiteIndexAsset::register($this);
 
             </div>
         </nav>
-    </div>
-
-    <div id="page-wrapper" >
-        <div class="row border-bottom">
-            <div class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                <div class="navbar-header">
-                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        <div id="page-wrapper" class="white-bg">
+            <div class="row border-bottom">
+                <div class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <!--<a href="<?=Url::to(['site/logout'])?>" data-method="post"> <i class="fa fa-sign-out"></i> Log out</a> -->
+                        </li>
+                    </ul>
                 </div>
-                <ul class="nav navbar-top-links navbar-right">
-                    <li>
-                        <!--<a href="<?=Url::to(['site/logout'])?>" data-method="post"> <i class="fa fa-sign-out"></i> Log out</a> -->
-                    </li>
-                </ul>
             </div>
+            <?= $content ?>
         </div>
-        <?= $content ?>
     </div>
-    
 
 <?php $this->endContent('');?>

@@ -2,17 +2,28 @@
 
 namespace frontend\controllers;
 
+use common\models\Review;
+
 class CampaignController extends \yii\web\Controller
 {
-    public function actionCampaign()
+    public $layout = 'columns-2';
+
+    public function actionCreate()
     {
         if (!\Yii::$app->user->isGuest) {
-            $this->layout = "columns-2";
-            return $this->render('campaign',['title'=> 'Campaign']);
+            return $this->render('create');
         }else {
             return $this->actionLogin();
         }
 
+    }
+
+    public function actionCreateReview()
+    {
+        $model = new Review();
+        return $this->render('review',[
+            'model' => $model,
+        ]);
     }
 
 }

@@ -369,7 +369,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
             <div class="col-md-3 col-sm-6">
                 <div class="pricing hover-effect">
                     <div class="pricing-head">
-                        <h3>Beginer</h3>
+                        <h3>Beginner</h3>
                     </div>
                     <ul class="pricing-content list-unstyled" style="background-color:#17607f;">
                         <li>
