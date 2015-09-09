@@ -5,12 +5,12 @@ namespace common\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Order;
+use common\models\Topup;
 
 /**
- * OrderSearch represents the model behind the search form about `common\models\Order`.
+ * TopupSearch represents the model behind the search form about `common\models\Topup`.
  */
-class OrderSearch extends Order
+class TopupSearch extends Topup
 {
     /**
      * @inheritdoc
@@ -18,7 +18,9 @@ class OrderSearch extends Order
     public function rules()
     {
         return [
-            [['id', 'user_id', 'order_id', 'package_id', 'status', 'created_by', 'created_at', 'user_id1'], 'integer'],
+            [['id', 'total_callout', 'enable'], 'integer'],
+            [['top_package'], 'safe'],
+            [['rate', 'price'], 'number'],
         ];
     }
 
@@ -40,7 +42,7 @@ class OrderSearch extends Order
      */
     public function search($params)
     {
-        $query = Order::find();
+        $query = Topup::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -56,14 +58,13 @@ class OrderSearch extends Order
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'user_id' => $this->user_id,
-            'order_id' => $this->order_id,
-            'package_id' => $this->package_id,
-            'status' => $this->status,
-            'created_by' => $this->created_by,
-            'created_at' => $this->created_at,
-            'user_id1' => $this->user_id1,
+            'rate' => $this->rate,
+            'total_callout' => $this->total_callout,
+            'price' => $this->price,
+            'enable' => $this->enable,
         ]);
+
+        $query->andFilterWhere(['like', 'top_package', $this->top_package]);
 
         return $dataProvider;
     }
