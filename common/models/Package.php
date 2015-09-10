@@ -48,7 +48,10 @@ class Package extends \yii\db\ActiveRecord
             [['name'], 'string', 'max' => 80],
             [['code'], 'string', 'max' => 19],
             [['videoMaxSize', 'pictureMaxSize'], 'string', 'max' => 7],
-            [['code'], 'unique']
+            [['code'], 'unique'],
+            ['enable','default','value'=>0],
+            ['videoMaxSize','default','value'=>1000],
+            ['pictureMaxSize','default','value'=>512],
         ];
     }
 
@@ -60,15 +63,15 @@ class Package extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
-            'maxCallOut' => Yii::t('app', 'maximum of callouts allowed'),
-            'maxAllowedCode' => Yii::t('app', 'number of given code'),
-            'enable' => Yii::t('app', 'Status of the package'),
-            'code' => Yii::t('app', 'package code'),
+            'maxCallOut' => Yii::t('app', 'Max. Callouts'),
+            'maxAllowedCode' => Yii::t('app', 'Max. No. Code'),
+            'enable' => Yii::t('app', 'Status'),
+            'code' => Yii::t('app', 'Package code'),
             'videoMaxSize' => Yii::t('app', 'Video Max Size'),
             'pictureMaxSize' => Yii::t('app', 'Picture Max Size'),
-            'minBalance' => Yii::t('app', 'Minimum balamce on callouts'),
+            'minBalance' => Yii::t('app', 'Balance Callouts %'),
             'update_by' => Yii::t('app', 'Update By'),
-            'updated_at' => Yii::t('app', 'Updated At'),
+            'updated_at' => Yii::t('app', 'Update At'),
             'create_by' => Yii::t('app', 'Create By'),
             'created_at' => Yii::t('app', 'Created At'),
             'duration' => Yii::t('app', 'Duration'),
@@ -93,4 +96,34 @@ class Package extends \yii\db\ActiveRecord
     {
         return new PackageQuery(get_called_class());
     }
+
+    public function StatusDropDownOptions()
+    {
+        $statusLookup = Lookup::items('Status-Package');
+        return $statusLookup;
+        //return ArrayHelper::map($statusLookup,'code','name');
+    }
+
+    public function StatusText()
+    {
+        $statusLookup = Lookup::items('Status-Package');
+        return $statusLookup[$this->enable];
+    }
+
+    public function ItemOfferDropDownOption()
+    {
+        $itemOfferLookup = Lookup::items('Item-Offer');
+        return $itemOfferLookup;
+    }
+
+    public function IconOfferDropDownOption()
+    {
+        $iconOfferLookup = Lookup::items('Icon-Offer');
+//        foreach ($iconOfferLookup as $key => $value) {
+//            $iconOfferLookup[$key] = Html::tag('i',null,['class'=>'fa '.$value]);
+//        }
+        return $iconOfferLookup;
+    }
+
+
 }
