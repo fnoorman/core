@@ -255,18 +255,14 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
     <div class="block-v1">
         <div class="container">
             <div class="title-v1">
-<<<<<<< HEAD
-                <h1>What is Hybrizy?</h1>
-                <p>Hybrizy is a new web and mobile application that combine both physical and digital contents by using pre-generated codes. In simpler words, Hybrizy is your one-code-solution to your new and improvised paper products.</p>
-=======
+
                 <h1>What is Hybrizy</h1>
                 <p>Hybrizy is a new web and mobile application that combine both physical and digital contents by using pre-generated codes. In simpler words, Hybrizy is your one-code-solution to your new and improvised paper products.</p>                
->>>>>>> v3
             </div>
             <div class="title-v1">
                 <h3>The Magic Of <strong>Hybrizy</strong></h3>
             </div>
-            
+
             <div class="row content-boxes-v3">
                 <div class="col-md-4 md-margin-bottom-30">
                     <i class="icon-custom rounded-x icon-bg-dark fa fa-lightbulb-o" style="background-color:#17607f;"></i>
@@ -674,7 +670,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
     }
         .clients-section:after {
         background: rgba(0,0,0,0.5);
-    }  
+    }
     </style>
 
     <!--Media Queries iphone 5-->
@@ -689,7 +685,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
         <div class="container">
             <div class="title-v1">
                 <h2>Our Clients</h2>
-            </div>            
+            </div>
             <ul class="owl-clients-v2" style="padding-left:29%;">
                 <!-- <li class="item"><a href="#"><img src="unify/assets/img/clients/jkr_edit2.png" alt=""></a></li>
                 <li class="item"><a href="#"><img src="unify/assets/img/clients/bekazon_edit.png" alt=""></a></li> -->
@@ -700,7 +696,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                 <!-- <li class="item"><a href="#"><img src="unify/assets/img/clients/kesihatan_edit3.png" alt=""></a></li>
                 <li class="item"><a href="#"><img src="unify/assets/img/clients/odosys_edit.png" alt=""></a></li>
                 <li class="item"><a href="#"><img src="unify/assets/img/clients/fms_edit.png" alt=""></a></li> -->
-            </ul>          
+            </ul>
         </div>
     </div>
 
@@ -723,7 +719,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                             <div class="testimonials-v3-title">
                                 <p>Tina Krueger</p>
                                 <span>UI Designer, Apple</span>
-                            </div>                                
+                            </div>
                             <p>Keep up the great work. Your template is by far the best on the market in terms of features, quality and value or money.</p>
                         </li>
                         <li class="item">
@@ -735,7 +731,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                             <p>So far I really like the theme. I am looking forward to exploring more of your themes. Thank you!</p>
                         </li>
                     </ul>
-                </div>                    
+                </div>
             </div>
         </div>
     </div>
