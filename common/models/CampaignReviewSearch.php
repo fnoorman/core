@@ -5,12 +5,12 @@ namespace common\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Order;
+use common\models\CampaignReview;
 
 /**
- * OrderSearch represents the model behind the search form about `common\models\Order`.
+ * CampaignReviewSearch represents the model behind the search form about `common\models\CampaignReview`.
  */
-class OrderSearch extends Order
+class CampaignReviewSearch extends CampaignReview
 {
     /**
      * @inheritdoc
@@ -18,7 +18,8 @@ class OrderSearch extends Order
     public function rules()
     {
         return [
-            [['id', 'user_id', 'order_id', 'package_id', 'status', 'created_by', 'created_at', 'user_id1'], 'integer'],
+            [['id'], 'integer'],
+            [['review_content'], 'safe'],
         ];
     }
 
@@ -40,7 +41,7 @@ class OrderSearch extends Order
      */
     public function search($params)
     {
-        $query = Order::find();
+        $query = CampaignReview::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -56,14 +57,9 @@ class OrderSearch extends Order
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'user_id' => $this->user_id,
-            'order_id' => $this->order_id,
-            'package_id' => $this->package_id,
-            'status' => $this->status,
-            'created_by' => $this->created_by,
-            'created_at' => $this->created_at,
-            'user_id1' => $this->user_id1,
         ]);
+
+        $query->andFilterWhere(['like', 'review_content', $this->review_content]);
 
         return $dataProvider;
     }

@@ -5,18 +5,18 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "{{%order}}".
+ * This is the model class for table "order".
  *
  * @property integer $id
- * @property string $firstName
- * @property string $lastName
- * @property integer $userId
- * @property integer $orderId
- * @property string $package
- * @property string $type_package
- * @property string $totalPrice
+ * @property integer $user_id
+ * @property integer $order_id
+ * @property integer $package_id
  * @property integer $status
- * @property string $dateTime
+ * @property integer $created_by
+ * @property integer $created_at
+ * @property integer $user_id1
+ *
+ * @property User $userId1
  */
 class Order extends \yii\db\ActiveRecord
 {
@@ -25,7 +25,7 @@ class Order extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%order}}';
+        return 'order';
     }
 
     /**
@@ -34,13 +34,8 @@ class Order extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['firstName', 'lastName', 'userId', 'orderId', 'package', 'type_package', 'totalPrice'], 'required'],
-            [['userId', 'orderId', 'status'], 'integer'],
-            [['totalPrice'], 'number'],
-            [['dateTime'], 'safe'],
-            [['firstName', 'lastName'], 'string', 'max' => 80],
-            [['package'], 'string', 'max' => 20],
-            [['type_package'], 'string', 'max' => 10]
+            [['user_id', 'order_id', 'package_id', 'created_by', 'user_id1'], 'required'],
+            [['user_id', 'order_id', 'package_id', 'status', 'created_by', 'created_at', 'user_id1'], 'integer']
         ];
     }
 
@@ -51,16 +46,22 @@ class Order extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'firstName' => Yii::t('app', 'First Name'),
-            'lastName' => Yii::t('app', 'Last Name'),
-            'userId' => Yii::t('app', 'User ID'),
-            'orderId' => Yii::t('app', 'Order ID'),
-            'package' => Yii::t('app', 'Package'),
-            'type_package' => Yii::t('app', 'Type Package'),
-            'totalPrice' => Yii::t('app', 'Total Price'),
+            'user_id' => Yii::t('app', 'User ID'),
+            'order_id' => Yii::t('app', 'Order ID'),
+            'package_id' => Yii::t('app', 'Package ID'),
             'status' => Yii::t('app', 'Status'),
-            'dateTime' => Yii::t('app', 'Date Time'),
+            'created_by' => Yii::t('app', 'Created By'),
+            'created_at' => Yii::t('app', 'Created At'),
+            'user_id1' => Yii::t('app', 'User Id1'),
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUserId1()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id1']);
     }
 
     /**

@@ -52,6 +52,8 @@ SiteIndexAsset::register($this);
                                 // not just as 'controller' even if default action is used.
                                 ['label' => 'Package', 'url' => ['package/index'],'icon'=>'fa fa-gift'],
                                 // 'Products' menu item will be selected as long as the route is 'product/index'
+                                ['label' => 'Topup', 'url' => ['topup/index']],
+                                ['label' => 'Customer Purchase', 'url' => ['order/index']],
                                 ['label' => 'Lookup', 'url' => ['lookup/index']],
                                 ['label' => 'Campaign', 'url' => ['campaign/campaign']],
                                 ['label' => 'Rights', 'url' => '#','items' => [
