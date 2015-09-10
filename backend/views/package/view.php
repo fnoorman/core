@@ -119,7 +119,6 @@ $custom = CustomInspiniaAsset::register($this);
                                 </div>
 
                             </div>
-
                             <?= $form->field($offerModel,'enable')->dropDownList($model->StatusDropDownOptions(),[
 
                                 // 'data-placeholder'=>'Choose permission...',
@@ -198,4 +197,3 @@ $custom = CustomInspiniaAsset::register($this);
 </script>
 
 <?php $this->endBlock(); ?>
-
