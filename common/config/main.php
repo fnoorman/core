@@ -27,5 +27,6 @@ return [
             'class' => 'common\components\DBRights',
         ],
 
+
     ],
 ];
