@@ -83,15 +83,16 @@ class RoleController extends \yii\web\Controller
     public function actionView($name)
     {
         $model  = new AssignmentForm();
-        $role   = Yii::$app->authManager->getRole($name);
+        $role   = Yii::$app->rightManager->getRole($name);
 
-        $roles  = Yii::$app->authManager->roles;
+        $roles  = Yii::$app->rightManager->roles;
 
-        // $permissions = Yii::$app->authManager->permissions;
+        // $permissions = Yii::$app->rightManager->permissions;
         $permissions = AuthItem::find()->orderBy(['type'=>SORT_ASC])->all();
         $ArrayOfPermissions = ArrayHelper::toArray($permissions);
 
         $assignedPermissions = Yii::$app->authManager->getPermissionsByRole($role->name);
+
         $ArrayOfAssignedPermissions = ArrayHelper::toArray($assignedPermissions);
 
         $ListOfPermission = array_diff(
@@ -113,7 +114,7 @@ class RoleController extends \yii\web\Controller
         );
 
         //Find children
-        $children = Yii::$app->authManager->getChildren($name);
+        $children = Yii::$app->rightManager->getChildren($name);
         $ArrayOfChildren = ArrayHelper::toArray($children);
 
         //Remove children
@@ -128,7 +129,7 @@ class RoleController extends \yii\web\Controller
                 'role'                => $role,
                 'ArrayOfPermissions'  => $ListOfPermission,
                 'model'               => $model,
-                'assignedPermissions' => Yii::$app->authManager->getPermissionsByRole($role->name),
+                'assignedPermissions' => Yii::$app->rightManager->getPermissionsByRole($role->name),
                 'message'             => $this->message,
                 'ArrayOfChildren'     => $ArrayOfChildren,
             ]

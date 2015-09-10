@@ -21,12 +21,28 @@ $custom = CustomInspiniaAsset::register($this);
     ]); ?>
         <?= $form->errorSummary($model); ?>
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-5">
                 <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-2">
                 <?= $form->field($model, 'maxCallOut')->textInput() ?>
             </div>
+            <div class="col-lg-2">
+                <?= $form->field($model, 'position')->textInput() ?>
+            </div>
+            <div class="col-lg-2">
+                <?= $form->field($model, 'enable')->dropDownList($model->StatusDropDownOptions(),[
+
+                    // 'data-placeholder'=>'Choose permission...',
+                    'class'           =>'chosen-select',
+//                    'style'           =>'width:200px;',
+                    'tabindex'        =>'4',
+                    'prompt'          =>'Choose ACTIVE or INACTIVE...'
+
+
+                ]) ?>
+            </div>
+
         </div>
         <div class="row">
             <div class="col-lg-3">
@@ -54,16 +70,7 @@ $custom = CustomInspiniaAsset::register($this);
                 <?= $form->field($model, 'price')->textInput() ?>
             </div>
             <div class="col-lg-3">
-                <?= $form->field($model, 'enable')->dropDownList($model->StatusDropDownOptions(),[
 
-                    // 'data-placeholder'=>'Choose permission...',
-                    'class'           =>'chosen-select',
-//                    'style'           =>'width:200px;',
-                    'tabindex'        =>'4',
-                    'prompt'          =>'Choose ACTIVE or INACTIVE...'
-
-
-                ]) ?>
             </div>
         </div>
 

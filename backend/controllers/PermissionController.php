@@ -7,13 +7,13 @@ use common\models\PermissionForm;
 
 class PermissionController extends \yii\web\Controller
 {
-    public $layout = 'header';
+    public $layout = 'inspinia/columns-2';
     public $message = "OK";
 
     public function actionIndex()
     {
         $model = new PermissionForm();
-        $permissions = Yii::$app->authManager->permissions;
+        $permissions = Yii::$app->rightManager->permissions;
         return $this->render(
             'index',
             [

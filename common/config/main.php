@@ -26,6 +26,9 @@ return [
         'rightManager' => [
             'class' => 'common\components\DBRights',
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
 
     ],
 ];

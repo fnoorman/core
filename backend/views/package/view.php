@@ -51,6 +51,7 @@ $custom = CustomInspiniaAsset::register($this);
                         <div class="col-lg-6">
                             <?= DetailView::widget([
                                 'model' => $model,
+                                'template'=>'<tr><th width="35%">{label}</th><td>{value}</td></tr>',
                                 'options'=>['class'=>'table table-striped'],
                                 'attributes' => [
                                     //'id',
@@ -63,12 +64,15 @@ $custom = CustomInspiniaAsset::register($this);
                                     ],
                                     'code',
                                     'videoMaxSize',
+                                    'duration'
+
                                 ],
                             ]) ?>
                         </div>
                         <div class="col-lg-6">
                             <?= DetailView::widget([
                                 'model' => $model,
+                                'template'=>'<tr><th width="35%">{label}</th><td>{value}</td></tr>',
                                 'options'=>['class'=>'table table-striped'],
                                 'attributes' => [
                                     'pictureMaxSize',
@@ -77,10 +81,12 @@ $custom = CustomInspiniaAsset::register($this);
                                     'updated_at:datetime',
                                     'create_by',
                                     'created_at:datetime',
+                                    'price'
                                 ],
                             ]) ?>
                         </div>
                     </div>
+
 
 
 

@@ -133,6 +133,7 @@ class PackageController extends Controller
     {
         $packageId = Yii::$app->request->post('Offer')['package_id'];
         $offerModel = new Offer();
+        $offerModel->loadDefaultValues();
         if ($offerModel->load(Yii::$app->request->post()) && $offerModel->save()) {
             $offerModel = new Offer();
         }
