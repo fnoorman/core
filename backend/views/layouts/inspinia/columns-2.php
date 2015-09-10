@@ -57,6 +57,7 @@ SiteIndexAsset::register($this);
                                 ['label' => 'Lookup', 'url' => ['lookup/index']],
                                 ['label' => 'Campaign', 'url' => ['campaign/campaign']],
                                 ['label' => 'Rights', 'url' => '#','items' => [
+                                    ['label' => 'Assignment', 'url' => ['assignment/index'],'icon'=>'fa fa-sitemap'],
                                     ['label' => 'Role', 'url' => ['role/index'],'icon'=>'fa fa-sitemap'],
                                     ['label' => 'Permission', 'url' => ['permission/index'],'icon'=>'fa fa-pencil-square-o'],
                                 ]]],

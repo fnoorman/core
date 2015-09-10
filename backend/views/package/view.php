@@ -47,32 +47,49 @@ $custom = CustomInspiniaAsset::register($this);
 
 
 
-                    <?= DetailView::widget([
-                    'model' => $model,
-                    'attributes' => [
-                        'id',
-                        'name',
-                        'maxCallOut',
-                        'maxAllowedCode',
-                        [
-                            'label'=> 'Status',
-                            'value'=> $model->StatusText()
-                        ],
-                        'code',
-                        'videoMaxSize',
-                        'pictureMaxSize',
-                        'minBalance',
-                        'update_by',
-                        'updated_at:datetime',
-                        'create_by',
-                        'created_at:datetime',
-                    ],
-                    ]) ?>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <?= DetailView::widget([
+                                'model' => $model,
+                                'options'=>['class'=>'table table-striped'],
+                                'attributes' => [
+                                    //'id',
+                                    'name',
+                                    'maxCallOut',
+                                    'maxAllowedCode',
+                                    [
+                                        'label'=> 'Status',
+                                        'value'=> $model->StatusText()
+                                    ],
+                                    'code',
+                                    'videoMaxSize',
+                                ],
+                            ]) ?>
+                        </div>
+                        <div class="col-lg-6">
+                            <?= DetailView::widget([
+                                'model' => $model,
+                                'options'=>['class'=>'table table-striped'],
+                                'attributes' => [
+                                    'pictureMaxSize',
+                                    'minBalance',
+                                    'update_by',
+                                    'updated_at:datetime',
+                                    'create_by',
+                                    'created_at:datetime',
+                                ],
+                            ]) ?>
+                        </div>
+                    </div>
+
+
+
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <h3>Item Offer to this package</h3>
                             <div class="hr-line-dashed"></div>
+                            <h3>Item Offer to this package</h3>
+
                         </div>
 
 

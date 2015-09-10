@@ -42,7 +42,7 @@ class Package extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['maxCallOut', 'maxAllowedCode', 'updated_at', 'created_at'], 'required'],
+            [['maxCallOut', 'maxAllowedCode'], 'required'],
             [['maxCallOut', 'maxAllowedCode', 'enable', 'minBalance', 'update_by', 'updated_at', 'create_by', 'created_at', 'duration', 'expiredBy'], 'integer'],
             [['price'], 'number'],
             [['name'], 'string', 'max' => 80],
@@ -52,6 +52,7 @@ class Package extends \yii\db\ActiveRecord
             ['enable','default','value'=>0],
             ['videoMaxSize','default','value'=>1000],
             ['pictureMaxSize','default','value'=>512],
+            ['price','default','value'=>0],
         ];
     }
 
@@ -74,9 +75,9 @@ class Package extends \yii\db\ActiveRecord
             'updated_at' => Yii::t('app', 'Update At'),
             'create_by' => Yii::t('app', 'Create By'),
             'created_at' => Yii::t('app', 'Created At'),
-            'duration' => Yii::t('app', 'Duration'),
+            'duration' => Yii::t('app', 'Duration (Days)'),
             'expiredBy' => Yii::t('app', 'Expired By'),
-            'price' => Yii::t('app', 'Price'),
+            'price' => Yii::t('app', 'Price (RM)'),
         ];
     }
 
