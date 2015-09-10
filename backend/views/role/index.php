@@ -42,15 +42,25 @@ $this->params['breadcrumbs'][] = 'All Roles';
                                 <td><?=Html::a(ucfirst($role->name),['role/detail','name'=>$role->name])?></td>
                                 <td><?=$role->description?></td>
                                 <td>
-                                  <?=Html::beginTag('a', [
-                                      'href'=>Url::to([
-                                        'role/remove',
-                                        'name'  =>  $role->name,
-                                        'type'    =>  $role->type,
-                                      ])])
-                                  ?>
+
+                                    <?=Html::beginTag('a', [
+                                        'href'=>Url::to([
+                                            'role/load',
+                                            'name'  =>  $role->name,
+                                            'type'    =>  $role->type,
+                                        ])])
+                                    ?>
+                                    <i class="fa fa-pencil fa-lg"></i>
+                                    <?=Html::endTag('a')?>
+                                    <?=Html::beginTag('a', [
+                                        'href'=>Url::to([
+                                            'role/remove',
+                                            'name'  =>  $role->name,
+                                            'type'    =>  $role->type,
+                                        ])])
+                                    ?>
                                     <i class="fa fa-trash fa-lg"></i>
-                                  <?=Html::endTag('a')?>
+                                    <?=Html::endTag('a')?>
 
                                 </td>
                               </tr>
@@ -69,13 +79,18 @@ $this->params['breadcrumbs'][] = 'All Roles';
                     <?php
                         $form = ActiveForm::begin([
                             'id'      =>"role-form",
-                            'action'  =>Url::to(['role/create'])
+                            'action'=> !($model->id) ? ['role/create']:['role/update'],
+//                            'action'  =>Url::to(['role/create'])
                         ]);
+
+                        if($model->id){
+                            echo $form->field($model,'originalRole')->hiddenInput(['value'=>$model->name]);
+                        }
                         echo $form->field($model,'name',['inputOptions'=>['placeholder'=>'New Role']]);
                         echo $form->field($model,'description',['inputOptions'=>['placeholder'=>'Description','rows'=>'3']])->textarea();
                     ?>
                     <div class="form-group">
-                        <?= Html::submitButton('Add New Role', ['class' => 'btn btn-primary block full-width m-b', 'name' => 'new-button']) ?>
+                        <?= Html::submitButton(!($model->id) ? Yii::t('app', 'Add New Role') : Yii::t('app', 'Update Role'), ['class' => 'btn btn-primary block full-width m-b', 'name' => 'new-button']) ?>
                     </div>
 
                     <?php ActiveForm::end();?>

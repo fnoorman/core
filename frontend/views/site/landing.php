@@ -371,12 +371,12 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
         <!-- <div class="container content"> -->
         <!-- Pricing Dark -->
         <div class="row margin-bottom-20 pricing-dark">
-          <?php foreach ($dataProvider->models as $value)  {  ?>
+          <?php foreach ($dataProvider as $package): ?>
             <div class="col-md-3 col-sm-6">
                 <div class="pricing hover-effect">
                     <div class="pricing-head">
 
-                        <h3> <?php echo $value->name;  ?></h3>
+                        <h3> <?php echo $package->name;  ?></h3>
                     </div>
                     <ul class="pricing-content list-unstyled" style="background-color:#17607f;">
                         <!-- <li>
@@ -405,7 +405,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                 </div>
 
             </div>
-            <?php } ?>
+            <?php endforeach; ?>
             <!-- <div class="col-md-3 col-sm-6">
                 <div class="pricing hover-effect pricing-square-border">
                     <div class="pricing-head">

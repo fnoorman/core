@@ -208,4 +208,50 @@ class RoleController extends \yii\web\Controller
 
     }
 
+    public function actionLoad()
+    {
+        $roleName = Yii::$app->request->get('name');
+        $type = Yii::$app->request->get('type');
+        $auth = Yii::$app->rightManager;
+        $model = new RoleForm();
+        $role = $auth->getRole($roleName);
+        if(isset($role)){
+            $model->id = true;
+        }
+        $model->name = $role->name;
+        $model->description = $role->description;
+        $roles = Yii::$app->rightManager->roles;
+
+        return $this->render(
+            'index',
+            [
+                'model'   =>$model,
+                'message' =>$this->message,
+                'roles'   =>$roles,
+            ]
+        );
+    }
+
+    public function actionUpdate()
+    {
+        $model = new RoleForm();
+
+        if($model->load(Yii::$app->request->post()) && $model->UpdateRole())
+        {
+            $model = new RoleForm();
+
+        }
+        $roles = Yii::$app->rightManager->roles;
+        return $this->render(
+            'index',
+            [
+                'model'   =>$model,
+                'message' =>$this->message,
+                'roles'   =>$roles,
+            ]
+        );
+
+
+    }
+
 }

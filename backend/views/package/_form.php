@@ -19,33 +19,54 @@ $custom = CustomInspiniaAsset::register($this);
         ],
         'errorSummaryCssClass' => 'alert alert-danger'
     ]); ?>
+        <?= $form->errorSummary($model); ?>
+        <div class="row">
+            <div class="col-lg-8">
+                <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+            </div>
+            <div class="col-lg-4">
+                <?= $form->field($model, 'maxCallOut')->textInput() ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <?= $form->field($model, 'maxAllowedCode')->textInput() ?>
+            </div>
+            <div class="col-lg-3">
+                <?= $form->field($model, 'minBalance')->textInput() ?>
+            </div>
+            <div class="col-lg-3">
+                <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
+            </div>
+            <div class="col-lg-3">
+                <?= $form->field($model, 'duration')->textInput() ?>
+            </div>
+        </div>
 
-    <?= $form->errorSummary($model); ?>
+        <div class="row">
+            <div class="col-lg-3">
+                <?= $form->field($model, 'videoMaxSize')->textInput(['maxlength' => true]) ?>
+            </div>
+            <div class="col-lg-3">
+                <?= $form->field($model, 'pictureMaxSize')->textInput(['maxlength' => true]) ?>
+            </div>
+            <div class="col-lg-3">
+                <?= $form->field($model, 'price')->textInput() ?>
+            </div>
+            <div class="col-lg-3">
+                <?= $form->field($model, 'enable')->dropDownList($model->StatusDropDownOptions(),[
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'maxCallOut')->textInput() ?>
-
-    <?= $form->field($model, 'maxAllowedCode')->textInput() ?>
-
-    <?= $form->field($model, 'enable')->dropDownList($model->StatusDropDownOptions(),[
-
-            // 'data-placeholder'=>'Choose permission...',
-            'class'           =>'chosen-select',
-            'style'           =>'width:250px;',
-            'tabindex'        =>'4',
-            'prompt'          =>'Choose ACTIVE or INACTIVE...'
+                    // 'data-placeholder'=>'Choose permission...',
+                    'class'           =>'chosen-select',
+//                    'style'           =>'width:200px;',
+                    'tabindex'        =>'4',
+                    'prompt'          =>'Choose ACTIVE or INACTIVE...'
 
 
-    ]) ?>
+                ]) ?>
+            </div>
+        </div>
 
-    <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'videoMaxSize')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'pictureMaxSize')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'minBalance')->textInput() ?>
 
     <?php if(isset($model->id)):?>
         <?= $form->field($model,'create_by')->hiddenInput(['value'=>$model->create_by])->label(false) ?>
@@ -54,6 +75,7 @@ $custom = CustomInspiniaAsset::register($this);
         <?= $form->field($model,'update_by')->hiddenInput(['value'=>Yii::$app->user->id])->label(false) ?>
         <?= $form->field($model,'create_by')->hiddenInput(['value'=>Yii::$app->user->id])->label(false) ?>
     <?php endif;?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
