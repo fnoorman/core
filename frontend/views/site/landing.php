@@ -12,6 +12,7 @@ use common\assets\unify\SingleUnifyAsset;
 use common\assets\unify\UnifyMediaAsset;
 use common\widgets\Alert;
 use yii\helpers\Url;
+use common\models\Lookup;
 
 $defaultBundle = DefaultUnifyAsset::register($this);
 SingleUnifyAsset::register($this);
@@ -55,8 +56,8 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                     <li class="page-scroll">
                         <a href="#news">News</a>
                     </li>
-                                       
-                    <?php if(Yii::$app->user->isGuest):?>                        
+
+                    <?php if(Yii::$app->user->isGuest):?>
                         <li class="page-scroll">
                             <a href="<?php echo Url::to(['site/signup']); ?>">Signup</a>
                         </li>
@@ -103,7 +104,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                          data-start="2000"
                          data-easing="Back.easeInOut"
                          data-endspeed="300">
-                        WE ARE UNIFY CREATIVE COMPANY 
+                        WE ARE UNIFY CREATIVE COMPANY
                     </div> -->
 
                     <!-- LAYER -->
@@ -252,7 +253,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
         <div class="container">
             <div class="title-v1">
                 <h1>What is Hybrizy?</h1>
-                <p>Hybrizy is a new web and mobile application that combine both physical and digital contents by using pre-generated codes. In simpler words, Hybrizy is your one-code-solution to your new and improvised paper products.</p>                
+                <p>Hybrizy is a new web and mobile application that combine both physical and digital contents by using pre-generated codes. In simpler words, Hybrizy is your one-code-solution to your new and improvised paper products.</p>
             </div>
             <div class="row content-boxes-v3">
                 <div class="col-md-4 md-margin-bottom-30">
@@ -353,13 +354,15 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
         <!-- <div class="container content"> -->
         <!-- Pricing Dark -->
         <div class="row margin-bottom-20 pricing-dark">
+          <?php foreach ($dataProvider->models as $value)  {  ?>
             <div class="col-md-3 col-sm-6">
                 <div class="pricing hover-effect">
                     <div class="pricing-head">
-                        <h3>Beginner</h3>
+
+                        <h3> <?php echo $value->name;  ?></h3>
                     </div>
                     <ul class="pricing-content list-unstyled" style="background-color:#17607f;">
-                        <li>
+                        <!-- <li>
                             <ul class="list-unstyled list-inline rating">
                                 <li><i class="fa fa-star fa-2x"></i></li>
                                 <li><i class="fa fa-star-half-empty fa-2x"></i></li>
@@ -367,12 +370,15 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                                 <li><i class="fa fa-star-o fa-2x"></i></li>
                                 <li><i class="fa fa-star-o fa-2x"></i></li>
                             </ul>
-                        </li>
+                        </li> -->
+                        <?php //foreach ($model->offers as $offer){?>
+
                         <li><i class="fa fa-gift"></i> Free customisation <span><i class="fa fa-check"></i></span></li>
                         <li><i class="fa fa-inbox"></i> 24 hour support<span><i class="fa fa-check"></i></span></li>
                         <li><i class="fa fa-globe"></i> 10 GB Disckspace</li>
                         <li><i class="fa fa-cloud-upload"></i> Cloud Storage</li>
                         <li><i class="fa fa-umbrella"></i> Online Protection</li>
+                        <?php // } ?>
                     </ul>
                     <div class="pricing-footer" style="background-color:#17607f;">
                         <h4><i>$</i>5<i>.49</i> <span>Per Month</span></h4>
@@ -380,8 +386,10 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                         <a href="#" class="btn-u btn-brd btn-u-default btn-u-xs"><i class="fa fa-shopping-cart"></i> Purchase Now</a>
                     </div>
                 </div>
+
             </div>
-            <div class="col-md-3 col-sm-6">
+            <?php } ?>
+            <!-- <div class="col-md-3 col-sm-6">
                 <div class="pricing hover-effect pricing-square-border">
                     <div class="pricing-head">
                         <h3>Pro</h3>
@@ -408,8 +416,8 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                         <a href="#" class="btn-u btn-brd btn-u-default btn-u-xs"><i class="fa fa-shopping-cart"></i> Purchase Now</a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
+            </div> -->
+            <!-- <div class="col-md-3 col-sm-6">
                 <div class="pricing hover-effect pricing-square-border">
                     <div class="pricing-head">
                         <h3>Premium</h3>
@@ -436,8 +444,8 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                         <a href="#" class="btn-u btn-brd btn-u-default btn-u-xs"><i class="fa fa-shopping-cart"></i> Purchase Now</a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
+            </div> -->
+            <!-- <div class="col-md-3 col-sm-6">
                 <div class="pricing hover-effect pricing-square-border">
                     <div class="pricing-head">
                         <h3>Elite</h3>
@@ -466,7 +474,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- </div> -->
     <!-- End Pricing Dark -->
     </div><!--/container-->
@@ -510,5 +518,3 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
 <script src="<?=$defaultBundle->baseUrl?>/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
 <![endif]-->
 <?php $this->endBlock('JavascriptInit'); ?>
-
-
