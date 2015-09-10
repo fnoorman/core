@@ -48,13 +48,16 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                         <a href="#body">Home</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">About v3</a>
+                        <a href="#about">About Us</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#services">Services</a>
+                        <a href="#services">Packages</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#news">News</a>
+                        <a href="#portfolio">Gallery</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contact Us</a>
                     </li>
 
                     <?php if(Yii::$app->user->isGuest):?>
@@ -252,9 +255,18 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
     <div class="block-v1">
         <div class="container">
             <div class="title-v1">
+<<<<<<< HEAD
                 <h1>What is Hybrizy?</h1>
                 <p>Hybrizy is a new web and mobile application that combine both physical and digital contents by using pre-generated codes. In simpler words, Hybrizy is your one-code-solution to your new and improvised paper products.</p>
+=======
+                <h1>What is Hybrizy</h1>
+                <p>Hybrizy is a new web and mobile application that combine both physical and digital contents by using pre-generated codes. In simpler words, Hybrizy is your one-code-solution to your new and improvised paper products.</p>                
+>>>>>>> v3
             </div>
+            <div class="title-v1">
+                <h3>The Magic Of <strong>Hybrizy</strong></h3>
+            </div>
+            
             <div class="row content-boxes-v3">
                 <div class="col-md-4 md-margin-bottom-30">
                     <i class="icon-custom rounded-x icon-bg-dark fa fa-lightbulb-o" style="background-color:#17607f;"></i>
@@ -274,7 +286,7 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
                     <i class="icon-custom rounded-x icon-bg-dark fa fa-bolt" style="background-color:#17607f;"></i>
                     <div class="content-boxes-in-v3">
                         <h2 class="heading-sm">Individuals</h2>
-                        <p>Hybrizy is your key in creating a cutting edge document storage experience. You can customize on what you want people to find in the Hybrizy code by managing it through your dashboard.</p>
+                        <p>Hybrizy is your key in creating a cutting edge document storage experience. You can customize on what you want people to find in the Hybrizy code.</p>
                     </div>
                 </div>
             </div>
@@ -332,7 +344,16 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
         </div>
     </div>
 
-    <div class="parallax-counter parallaxBg" style="background-color:#29abe2;">
+    <style type="text/css">
+        .parallax-quote {
+        padding: 30px 0;
+        background: rgba(0,0,0,0.8);
+    }
+    .parallax-quote:after {
+     background: rgba(0,0,0,0.2);
+}
+    </style>
+    <div class="parallax-quote parallaxBg" style="background-color:#17607f;">
         <div class="container">
             <div class="parallax-quote-in">
                 <p>We do not simplify things but we give something <br>more manageable.</p>
@@ -478,21 +499,330 @@ $this->params['page_body_prop'] = ['id'=>'body', 'data-spy'=>'scroll', 'data-tar
         <!-- </div> -->
     <!-- End Pricing Dark -->
     </div><!--/container-->
+</section>
+<!-- End Services Section -->
 
-    <!--<div class="call-action-v1">
-        <div class="container">
-            <div class="call-action-v1-box">
-                <div class="call-action-v1-in">
-                    <p>Unify creative technology company providing key digital services and focused on helping our clients to build a successful business on web and mobile.</p>
+<!-- Portfolio Section -->
+<section id="portfolio" class="about-section">
+    <div class="container content-lg" style="padding-top:25px;">
+        <div class="title-v1">
+            <h2>Our Gallery</h2>
+            <p>We do <strong>things</strong> differently company providing key digital services. <br>
+            Focused on helping our clients to build a <strong>successful</strong> business on web and mobile.</p>
+        </div>
+
+        <div class="cube-portfolio">
+            <!-- <div id="filters-container" class="cbp-l-filters-button">
+                <div data-filter="*" class="cbp-filter-item-active cbp-filter-item"> All </div>
+                <div data-filter=".print" class="cbp-filter-item"> Print </div>
+                <div data-filter=".web-design" class="cbp-filter-item"> Web Design </div>
+                <div data-filter=".motion" class="cbp-filter-item"> Motion </div>
+            </div> --><!--/end Filters Container-->
+
+            <div id="grid-container" class="cbp-l-grid-gallery">
+                <div class="cbp-item print motion">
+                    <!-- <a href="unify/assets/ajax/project1.html" class="cbp-caption cbp-singlePageInline"
+                       data-title="World Clock Widget<br>by Paul Flavius Nechita"> -->
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="img/portfolio/HYBRIZY01.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title">World Clock Widget</div>
+                                    <div class="cbp-l-caption-desc">by Paul Flavius Nechita</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="call-action-v1-in inner-btn page-scroll">
-                    <a href="#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-block">View Our Portfolio</a>
+                <div class="cbp-item web-design">
+                    <!-- <a href="unify/assets/ajax/project2.html" class="cbp-caption cbp-singlePageInline"
+                       data-title="Bolt UI<br>by Tiberiu Neamu"> -->
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="img/portfolio/HYBRIZY02.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title">Bolt UI</div>
+                                    <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="cbp-item print motion">
+                    <!-- <a href="unify/assets/ajax/project3.html" class="cbp-caption cbp-singlePageInline"
+                       data-title="WhereTO App<br>by Tiberiu Neamu"> -->
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="img/portfolio/HYBRIZY03.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title">WhereTO App</div>
+                                    <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="cbp-item web-design print">
+                    <!-- <a href="unify/assets/ajax/project4.html" class="cbp-caption cbp-singlePageInline"
+                       data-title="iDevices<br>by Tiberiu Neamu"> -->
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="img/portfolio/HYBRIZY04.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title">iDevices</div>
+                                    <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="cbp-item motion">
+                    <!-- <a href="unify/assets/ajax/project5.html" class="cbp-caption cbp-singlePageInline"
+                       data-title="Seemple* Music for iPad<br>by Tiberiu Neamu"> -->
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="img/portfolio/HYBRIZY05.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title">Seemple* Music for iPad</div>
+                                    <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="cbp-item print motion">
+                    <!-- <a href="unify/assets/ajax/project6.html" class="cbp-caption cbp-singlePageInline"
+                       data-title="Remind~Me Widget<br>by Tiberiu Neamu"> -->
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="img/portfolio/HYBRIZY06.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title">Remind~Me Widget</div>
+                                    <div class="cbp-l-caption-desc">by Tiberiu Neamu</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="cbp-item web-design print">
+                    <!-- <a href="unify/assets/ajax/project7.html" class="cbp-caption cbp-singlePageInline"
+                       data-title="Workout Buddy<br>by Tiberiu Neamu"> -->
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="img/portfolio/HYBRIZY07.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title"></div>
+                                    <div class="cbp-l-caption-desc"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="cbp-item print">
+                    <!-- <a href="unify/assets/ajax/project8.html" class="cbp-caption cbp-singlePageInline"
+                       data-title="Digital Menu<br>by Cosmin Capitanu"> -->
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="img/portfolio/HYBRIZY08.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title"></div>
+                                    <div class="cbp-l-caption-desc"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="cbp-item motion">
+                    <!-- <a href="unify/assets/ajax/project9.html" class="cbp-caption cbp-singlePageInline"
+                       data-title="Holiday Selector<br>by Cosmin Capitanu"> -->
+                        <div class="cbp-caption-defaultWrap">
+                            <img src="img/portfolio/HYBRIZY09.jpg" alt="">
+                        </div>
+                        <div class="cbp-caption-activeWrap">
+                            <div class="cbp-l-caption-alignLeft">
+                                <div class="cbp-l-caption-body">
+                                    <div class="cbp-l-caption-title"></div>
+                                    <div class="cbp-l-caption-desc"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
+
+    <style type="text/css">
+        .clients-section {
+        background: #29abe2;
+    }
+        .clients-section:after {
+        background: rgba(0,0,0,0.5);
+    }  
+    </style>
+
+    <!--Media Queries iphone 5-->
+    <style type="text/css">
+        @media only screen and (min-device-width: 320px) and (max-device-width: 568px){
+        .owl-clients-v2{
+            margin-left: -40px;
+            }
+        }
+    </style>
+    <div class="clients-section parallaxBg">
+        <div class="container">
+            <div class="title-v1">
+                <h2>Our Clients</h2>
+            </div>            
+            <ul class="owl-clients-v2" style="padding-left:29%;">
+                <!-- <li class="item"><a href="#"><img src="unify/assets/img/clients/jkr_edit2.png" alt=""></a></li>
+                <li class="item"><a href="#"><img src="unify/assets/img/clients/bekazon_edit.png" alt=""></a></li> -->
+                <li class="item"><a href="#"><img src="img/clients2/MOY.png" alt=""></a></li>
+                <!-- <li class="item"><a href="#"><img src="unify/assets/img/clients/jpj_edit2.png" alt=""></a></li> -->
+                <li class="item"><a href="#"><img src="img/clients2/ujang_edit2.png" alt=""></a></li>
+                <li class="item"><a href="#"><img src="img/clients2/apo_edit.png" alt=""></a></li>
+                <!-- <li class="item"><a href="#"><img src="unify/assets/img/clients/kesihatan_edit3.png" alt=""></a></li>
+                <li class="item"><a href="#"><img src="unify/assets/img/clients/odosys_edit.png" alt=""></a></li>
+                <li class="item"><a href="#"><img src="unify/assets/img/clients/fms_edit.png" alt=""></a></li> -->
+            </ul>          
+        </div>
+    </div>
+
+    <div class="testimonials-v3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <ul class="list-unstyled owl-ts-v1">
+                        <li class="item">
+                            <img class="rounded-x img-bordered" src="img/team/img3-sm.jpg" alt="">
+                            <div class="testimonials-v3-title">
+                                <p>David Case</p>
+                                <span>Web Developer, Google</span>
+                            </div>
+                            <p>I just wanted to tell you how much I like to use Unify - <strong>it's so sleek and elegant!</strong> <br>
+                            The customisation options you implemented are countless, and I feel sorry I can't use them all. Good job, and keep going!<p>
+                        </li>
+                        <li class="item">
+                            <img class="rounded-x img-bordered" src="img/team/img2-sm.jpg" alt="">
+                            <div class="testimonials-v3-title">
+                                <p>Tina Krueger</p>
+                                <span>UI Designer, Apple</span>
+                            </div>                                
+                            <p>Keep up the great work. Your template is by far the best on the market in terms of features, quality and value or money.</p>
+                        </li>
+                        <li class="item">
+                            <img class="rounded-x img-bordered" src="img/team/img1-sm.jpg" alt="">
+                            <div class="testimonials-v3-title">
+                                <p>John Clarck</p>
+                                <span>Marketing &amp; Cunsulting, IBM</span>
+                            </div>
+                            <p>So far I really like the theme. I am looking forward to exploring more of your themes. Thank you!</p>
+                        </li>
+                    </ul>
+                </div>                    
+            </div>
+        </div>
+    </div>
 </section>
-<!-- End Services Section -->
+<!-- End Portfolio Section -->
+
+<!--style for contact background-->
+<style type="text/css">
+
+    .contacts-section {
+    background: #17607f;
+}
+</style>
+
+<!-- Contact Section -->
+<section id="contact" class="contacts-section">
+    <div class="container content-lg">
+        <div class="title-v1">
+            <h2>Contact Us</h2>
+            <p>So, what is holding you back in using this new app?<br> Subscribe now to get your very own personal Hybrizy code!</p>
+        </div>
+
+        <div class="row contacts-in">
+            <div class="col-md-6 md-margin-bottom-40">
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-home"></i> 22 Jalan USJ 21/4, Subang Jaya Selangor</li>
+                    <li><i class="fa fa-phone"></i> 03-8024 2601</li>
+                    <li><i class="fa fa-envelope"></i>admin@aptinventions.com</li>
+                    <li><i class="fa fa-globe"></i> <a href="http://hybrizy.com">www.hybrizy.com</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <form action="php/sky-forms-pro/demo-contacts-process.php" method="post" id="sky-form3" class="sky-form contact-style" novalidate="novalidate">
+                    <fieldset>
+                        <label>Name</label>
+                        <div class="row">
+                            <div class="col-md-7 margin-bottom-20 col-md-offset-0">
+                                <div>
+                                    <input type="text" name="name" id="name" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <label>Email <span class="color-red">*</span></label>
+                        <div class="row">
+                            <div class="col-md-7 margin-bottom-20 col-md-offset-0">
+                                <div>
+                                    <input type="text" name="email" id="email" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <label>Message</label>
+                        <div class="row">
+                            <div class="col-md-11 margin-bottom-20 col-md-offset-0">
+                                <div>
+                                    <textarea rows="8" name="message" id="message" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p><button type="submit" class="btn-u btn-brd btn-brd-hover btn-u-dark">Send Message</button></p>
+                    </fieldset>
+
+                    <div class="message">
+                        <i class="rounded-x fa fa-check"></i>
+                        <p>Your message was successfully sent!</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright-section">
+        <p>2015 © All Rights Reserved.Theme by <a target="_blank" href="https:aptinventions.com">APT Inventions SDN BHD</a></p>
+        <ul class="social-icons">
+            <!-- <li><a href="#" data-original-title="Facebook" class="social_facebook rounded-x"></a></li>
+            <li><a href="#" data-original-title="Twitter" class="social_twitter rounded-x"></a></li>
+            <li><a href="#" data-original-title="Goole Plus" class="social_googleplus rounded-x"></a></li>
+            <li><a href="#" data-original-title="Pinterest" class="social_pintrest rounded-x"></a></li>
+            <li><a href="#" data-original-title="Linkedin" class="social_linkedin rounded-x"></a></li> -->
+        </ul>
+        <span class="page-scroll"><a href="#intro"><i class="fa fa-angle-double-up back-to-top"></i></a></span>
+    </div>
+</section>
+<!-- End Contact Section -->
 
 <?php $this->beginBlock('JavascriptInit'); ?>
 
