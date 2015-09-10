@@ -19,24 +19,45 @@ $custom = CustomInspiniaAsset::register($this);
 
     <?= $form->errorSummary($model); ?>
 
-    <?= $form->field($model, 'top_package')->textInput(['maxlength' => true]) ?>
+    <div class="row">
+        <div class="col-lg-4">
+            <?= $form->field($model, 'top_package')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-lg-2">
+            <?= $form->field($model, 'rate')->textInput() ?>
+        </div>
+        <div class="col-lg-2">
+            <?= $form->field($model, 'total_callout')->textInput() ?>
+        </div>
+        <div class="col-lg-2">
+            <?= $form->field($model, 'price')->textInput() ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'rate')->textInput() ?>
+    <div class="row">
 
-    <?= $form->field($model, 'total_callout')->textInput() ?>
+        <div class="col-lg-3">
+          <?= $form->field($model, 'enable')->dropDownList($model->StatusDropDownOptions(),[
 
-    <?= $form->field($model, 'price')->textInput() ?>
-
-    <?= $form->field($model, 'enable')->dropDownList($model->StatusDropDownOptions(),[
-
-            // 'data-placeholder'=>'Choose permission...',
-            'class'           =>'chosen-select',
-            'style'           =>'width:250px;',
-            'tabindex'        =>'4',
-            'prompt'          =>'Choose ACTIVE or INACTIVE...'
+                  // 'data-placeholder'=>'Choose permission...',
+                  'class'           =>'chosen-select',
+                  'style'           =>'width:250px;',
+                  'tabindex'        =>'4',
+                  'prompt'          =>'Choose ACTIVE or INACTIVE...'
 
 
-    ]) ?>
+          ]) ?>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Topup */
 
-$this->title = $model->id;
+$this->title = $model->top_package;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Topups'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -39,22 +39,25 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                     </div>
 
-
-
-                    <?= DetailView::widget([
-                    'model' => $model,
-                    'attributes' => [
-                    'id',
-                    'top_package',
-                    'rate',
-                    'total_callout',
-                    'price',
-                    [
-                        'label'=> 'enable',
-                        'value'=> $model->StatusText()
-                    ],
-                    ],
-                    ]) ?>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <?= DetailView::widget([
+                            'model' => $model,
+                            'options'=>['class'=>'table table-striped'],
+                            'attributes' => [
+                            //'id',
+                            'top_package',
+                            'rate',
+                            'total_callout',
+                            'price',
+                            [
+                                'label'=> 'enable',
+                                'value'=> $model->StatusText()
+                            ],
+                            ],
+                            ]) ?>
+                          </div>
+                      </div>
                 </div>
             </div>
         </div>

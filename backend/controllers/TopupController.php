@@ -61,7 +61,9 @@ class TopupController extends Controller
      */
     public function actionCreate()
     {
+
         $model = new Topup();
+        $model->loadDefaultValues();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -120,6 +122,6 @@ class TopupController extends Controller
         }
     }
 
-    
+
 
 }
