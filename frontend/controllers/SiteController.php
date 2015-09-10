@@ -10,6 +10,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\base\InvalidParamException;
+use yii\db\Query;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -17,6 +18,8 @@ use yii\filters\AccessControl;
 use common\models\Package;
 use common\models\PackageSearch;
 use common\models\Offer;
+use yii\data\ActiveDataProvider;
+
 
 /**
  * Site controller
@@ -76,11 +79,23 @@ class SiteController extends Controller
     {
         $this->layout = 'unify/base';
 
-        $searchModel = new PackageSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+//        $searchModel = new PackageSearch();
+//        $searchModel->enable =1;
+//        $dataProvider = $searchModel->search('');
+//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $query = new Query;
+        $activeDataProvider = new ActiveDataProvider([
+            'query' => Package::find(),
+            'pagination' => [
+                    'pageSize' => 4,
+            ],
+        ]);
+
+        $dataProvider = $activeDataProvider->getModels();
 
         return $this->render('landing',[
-          'searchModel' => $searchModel,
+//          'searchModel' => $searchModel,
           'dataProvider' => $dataProvider,
 
           ]);

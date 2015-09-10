@@ -3,13 +3,9 @@
 namespace common\models;
 
 use Yii;
-use common\models\Lookup;
-use yii\helpers\ArrayHelper;
-use yii\behaviors\TimestampBehavior;
-use yii\helpers\Html;
 
 /**
- * This is the model class for table "{{%package}}".
+ * This is the model class for table "package".
  *
  * @property integer $id
  * @property string $name
@@ -24,6 +20,9 @@ use yii\helpers\Html;
  * @property integer $updated_at
  * @property integer $create_by
  * @property integer $created_at
+ * @property integer $duration
+ * @property integer $expiredBy
+ * @property double $price
  *
  * @property Offer[] $offers
  */
@@ -34,18 +33,7 @@ class Package extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%package}}';
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            TimestampBehavior::className(),
-
-        ];
+        return 'package';
     }
 
     /**
@@ -55,11 +43,16 @@ class Package extends \yii\db\ActiveRecord
     {
         return [
             [['maxCallOut', 'maxAllowedCode'], 'required'],
-            [['maxCallOut', 'maxAllowedCode', 'enable', 'minBalance', 'update_by', 'updated_at', 'create_by', 'created_at'], 'integer'],
+            [['maxCallOut', 'maxAllowedCode', 'enable', 'minBalance', 'update_by', 'updated_at', 'create_by', 'created_at', 'duration', 'expiredBy'], 'integer'],
+            [['price'], 'number'],
             [['name'], 'string', 'max' => 80],
             [['code'], 'string', 'max' => 19],
             [['videoMaxSize', 'pictureMaxSize'], 'string', 'max' => 7],
-            [['code'], 'unique']
+            [['code'], 'unique'],
+            ['enable','default','value'=>0],
+            ['videoMaxSize','default','value'=>1000],
+            ['pictureMaxSize','default','value'=>512],
+            ['price','default','value'=>0],
         ];
     }
 
@@ -77,11 +70,14 @@ class Package extends \yii\db\ActiveRecord
             'code' => Yii::t('app', 'Package code'),
             'videoMaxSize' => Yii::t('app', 'Video Max Size'),
             'pictureMaxSize' => Yii::t('app', 'Picture Max Size'),
-            'minBalance' => Yii::t('app', 'Balance Callouts'),
+            'minBalance' => Yii::t('app', 'Balance Callouts %'),
             'update_by' => Yii::t('app', 'Update By'),
             'updated_at' => Yii::t('app', 'Update At'),
             'create_by' => Yii::t('app', 'Create By'),
             'created_at' => Yii::t('app', 'Created At'),
+            'duration' => Yii::t('app', 'Duration (Days)'),
+            'expiredBy' => Yii::t('app', 'Expired By'),
+            'price' => Yii::t('app', 'Price (RM)'),
         ];
     }
 
