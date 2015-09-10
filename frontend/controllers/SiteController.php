@@ -14,6 +14,9 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use common\models\Package;
+use common\models\PackageSearch;
+use common\models\Offer;
 
 /**
  * Site controller
@@ -72,7 +75,15 @@ class SiteController extends Controller
     public function actionLanding()
     {
         $this->layout = 'unify/base';
-        return $this->render('landing');
+
+        $searchModel = new PackageSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('landing',[
+          'searchModel' => $searchModel,
+          'dataProvider' => $dataProvider,
+
+          ]);
     }
 
     /**
@@ -84,6 +95,7 @@ class SiteController extends Controller
     {
     	if (!\Yii::$app->user->isGuest) {
         	$this->layout = "columns-2";
+
         	return $this->render('index');
         }else {
             return $this->actionLogin();
@@ -103,7 +115,7 @@ class SiteController extends Controller
         }else {
             return $this->actionLogin();
         }
-    }    
+    }
 
     /**
      * Logs in a user.
@@ -118,12 +130,12 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
- 
+
             //return $this->actionIndex();
             return $this->goHome();
             	//$this->layout = "columns-2";
         	//return $this->render('index', ['model' => $model,]);
- 
+
         } else {
             $this->layout='inspinia/base';
             return $this->render('hybrizy-login', [
@@ -185,7 +197,7 @@ class SiteController extends Controller
    /// ->setTo('koihafiz@gmail.com')
    // ->setSubject('Message subject')
    // ->setHtmlBody('<b>HTML content</b>')
-   // ->send();            
+   // ->send();
     }
 
     /**
@@ -197,7 +209,7 @@ class SiteController extends Controller
     {
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
-            if ($user = $model->signup()) 
+            if ($user = $model->signup())
             {
                 /*if (Yii::$app->getUser()->login($user)) {
                     return $this->goHome();
@@ -206,8 +218,8 @@ class SiteController extends Controller
                 $authKey = $user->getAuthKey();
                 $regMail = $user->getEmail();
                 $userName= $user->username;
-                
-                
+
+
 
                 $to = $regMail;
                 $hybrizyAdmin = "Hybrizy.com";
@@ -223,7 +235,7 @@ class SiteController extends Controller
                 Yii::$app->urlManager->createAbsoluteUrl(
                 ['site/verify','key'=>$authKey, 'email'=>$regMail]
                 ));
-                
+
                 $sendMail = \Yii::$app->mailer->compose()
                 ->setFrom([\Yii::$app->params['supportEmail'] => $hybrizyAdmin])
                 ->setTo($to)
@@ -240,8 +252,8 @@ class SiteController extends Controller
             }
         }
         //forgot
-        
- 
+
+
         // forgot
         $this->layout='inspinia/base';
         return $this->render('hybrizy-signup', [
@@ -263,16 +275,16 @@ class SiteController extends Controller
 
         $model = User::findByEmail($email, User::STATUS_PENDING_VERIFICATION);
 
-        if ($model) { 
+        if ($model) {
            if($model->validateAuthKey($key)) {
- 
+
 
                 $model->generateAuthKey();
-                $newKey = $model->getAuthKey();     
+                $newKey = $model->getAuthKey();
                 $model->auth_key = $newKey;
                 $model->status = User::STATUS_ACTIVE;
                 $model->save();
-                
+
 
                 Yii::$app->user->login($model);
                 //return $this->goHome();
@@ -283,9 +295,9 @@ class SiteController extends Controller
             return $this->render('emailVerification', [
                 'wrong' => $wrong,
             ]);
-            } 
+            }
         }
-      }   
+      }
 
     /**
      * Requests password reset.
