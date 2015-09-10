@@ -33,9 +33,7 @@ class Topup extends \yii\db\ActiveRecord
             [['top_package', 'rate', 'total_callout', 'price', 'enable'], 'required'],
             [['rate', 'price'], 'number'],
             [['total_callout', 'enable'], 'integer'],
-            [['top_package'], 'string', 'max' => 80],
-            ['price','default','value'=>0],
-            ['enable','default','value'=>0],
+            [['top_package'], 'string', 'max' => 80]
         ];
     }
 
